@@ -1,0 +1,108 @@
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 40, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [ "custom/rofi", "sway/workspaces", "sway/mode", "sway/scratchpad", "sway/window"],
+    // "modules-center": [ ],
+    "modules-right": [ "pulseaudio", "network", "memory", "backlight", "battery", "clock", "custom/wallpaper", "custom/logout", "tray"],
+    // Modules configuration
+   "sway/workspaces": {
+       "disable-scroll": true,
+       "all-outputs": true,
+       "format": "{name}: {icon}",
+       "format-icons": {
+           "1": "",
+           "2": "",
+           "3": "󰨞",
+           "4": "",
+           "5": "󰎆",
+           "urgent": "",
+           "focused": "",
+           "default": "",
+       }
+   },
+    "sway/mode": {
+        "format": "<span style=\"oblique\">{}</span>"
+    },
+    "sway/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "{:%a %d-%B-%y %I:%M %p}"
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "tray": {
+        "icon-size": 20,
+        "spacing": 10,
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% 󰂄",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}%  {format_source}",
+        "format-bluetooth-muted": "󰗿  {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "kitty -e alsamixer"
+    },
+    "custom/rofi": {
+        "format": " 󰍜 ",
+        "on-click": "rofi -show drun",
+        "tooltip-format": "rofi"
+    },
+    "custom/wallpaper": {
+        "format": " 󰸉  ",
+        "tooltip-format": "Change Wallpaper",
+        "on-click": "$HOME/scripts/wallpaper",
+    },
+    "custom/logout": {
+        "format": " ⏻ ",
+        "on-click": "/usr/bin/wlogout",
+    },
+}
+

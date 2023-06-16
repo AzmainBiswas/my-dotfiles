@@ -1,0 +1,72 @@
+# Dracula theme for Alacritty
+import:
+  - ~/.config/alacritty/themes/catppuccin-mocha.yml
+
+window:
+  padding:
+    x: 20
+    y: 20
+
+  class:
+    # Application instance name
+    instance: Alacritty
+    # General application class
+    general: Alacritty
+
+  dimensions:
+    columns: 150
+    lines: 40
+  opacity: 0.9
+  decorations: none
+scrolling:
+  history: 50000
+  multiplier: 3
+
+
+# Font configuration
+font:
+  # Normal (roman) font face
+  normal:
+    family: ComicShannsMono Nerd Font
+    style: Regular
+  bold:
+    family: ComicShannsMono Nerd Font
+    style: Bold
+  italic:
+    family: ComicShannsMono Nerd Font
+    style: Italic
+  bold_italic:
+    family: ComicShannsMono Nerd Font 
+    style: Bold Italic
+
+  # Point size
+  size: 14.0
+draw_bold_text_with_bright_colors: true
+
+
+# Window title
+title: Alacritty
+
+cursor:
+  # Cursor style
+  style:
+    # Cursor shape
+    #
+    # Values for `shape`:
+    #   - ▇ Block
+    #   - _ Underline
+    #   - | Beam
+    shape: Beam
+
+    # Cursor blinking state
+    #
+    # Values for `blinking`:
+    #   - Never: Prevent the cursor from ever blinking
+    #   - Off: Disable blinking by default
+    #   - On: Enable blinking by default
+    #   - Always: Force the cursor to always blink
+    blinking: off
+    blink_interval: 2
+  # shell for alacritty
+# shell:
+#   program: /bin/zsh 

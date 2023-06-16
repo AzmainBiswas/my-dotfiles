@@ -1,0 +1,114 @@
+configuration {
+  show-icons: true;
+  icon-theme: "Papirus";
+  display-drun: " ";
+  display-run: " ";
+  display-window: " ";
+  display-combi: "combi";
+}
+
+@theme "/dev/null"
+
+* {
+    /* colorula theme colour palette */
+    color-bgd: #1f222d;
+    color-cur: #44475a;
+    color-fgd: #f8f8f2;
+    color-cmt: #6272a4;
+    color-cya: #81a1c1;
+    color-grn: #50fa7b;
+    color-ora: #ffb86c;
+    color-pnk: #ff79c6;
+    color-pur: #bd93f9;
+    color-red: #ff5555;
+    color-yel: #f1fa8c;
+
+  font: "Jetbrains Mono 16";
+
+    foreground: @color-fgd;
+    background-color: @color-bgd;
+    active-background: @color-pnk;
+    urgent-background: @color-red;
+    
+    selected-background: @active-background;
+    selected-urgent-background: @urgent-background;
+    selected-active-background: @active-background;
+    separatorcolor: @active-background;
+    bordercolor: #6272a4;
+
+   }
+
+* {
+  bg: @color-bgd;
+  bg-alt: @color-cur;
+
+  fg: @color-fgd;
+  fg-alt: #787c99;
+
+  background-color: @bg;
+  
+  border: 0;
+  margin: 0;
+  padding: 2;
+  spacing: 0;
+}
+
+window {
+    
+    width:   60%;
+    children:   [mainbox];
+    border: 2;
+    border-radius: 3;
+    border-color: @color-cya;
+    padding: 5;
+}
+
+element {
+  padding: 8 0;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @color-pur;
+}
+
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 30;
+}
+
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+}
+
+listview {
+  padding: 8 12;
+  background-color: @bg;
+  columns: 1;
+  lines: 6;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview];
+}
+
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12 0 0 12;
+  text-color: @fg;
+}
+
+/* vim: ft=sass
