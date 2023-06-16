@@ -12,36 +12,41 @@ map J zoom out
 map i recolor
 map p print
 set selection-clipboard clipboard
-/* color scheme */
-set default-bg                  "#10151a"
-set default-fg                  "#ebdbb2"
 
-set statusbar-fg                "#bdae93"
-set statusbar-bg                "#504945"
+set default-fg                "#CDD6F4"
+set default-bg 			          "#1E1E2E"
 
-set inputbar-bg                 "#10151a"
-set inputbar-fg                 "#fbf1c7"
+set completion-bg		          "#313244"
+set completion-fg		          "#CDD6F4"
+set completion-highlight-bg	  "#575268"
+set completion-highlight-fg	  "#CDD6F4"
+set completion-group-bg		    "#313244"
+set completion-group-fg		    "#89B4FA"
 
-set notification-bg             "#10151a"
-set notification-fg             "#fbf1c7"
+set statusbar-fg		          "#CDD6F4"
+set statusbar-bg		          "#313244"
 
-set notification-error-bg       "#1d2021"
-set notification-error-fg       "#fb4934"
+set notification-bg		        "#313244"
+set notification-fg		        "#CDD6F4"
+set notification-error-bg	    "#313244"
+set notification-error-fg	    "#F38BA8"
+set notification-warning-bg	  "#313244"
+set notification-warning-fg	  "#FAE3B0"
 
-set notification-warning-bg     "#1d2021"
-set notification-warning-fg     "#fb4934"
+set inputbar-fg			          "#CDD6F4"
+set inputbar-bg 		          "#313244"
 
-set highlight-color             "#fabd2f"
-set highlight-active-color      "#83a598"
+set recolor-lightcolor		    "#1E1E2E"
+set recolor-darkcolor		      "#CDD6F4"
 
-set completion-bg               "#3c3836"
-set completion-fg               "#83a598"
+set index-fg			            "#CDD6F4"
+set index-bg			            "#1E1E2E"
+set index-active-fg		        "#CDD6F4"
+set index-active-bg		        "#313244"
 
-set completion-highlight-fg     "#fbf1c7"
-set completion-highlight-bg     "#83a598"
+set render-loading-bg		      "#1E1E2E"
+set render-loading-fg		      "#CDD6F4"
 
-set recolor-lightcolor          "#10151a"
-set recolor-darkcolor           "#ebdbb2"
-
-set recolor                     "false"
-set recolor-keephue             "false"
+set highlight-color		        "#575268"
+set highlight-fg              "#F5C2E7"
+set highlight-active-color	  "#F5C2E7"
