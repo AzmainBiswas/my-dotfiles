@@ -28,13 +28,16 @@ font pango:FiraCode Nerd Font Propo 10
 
 ########################################### input method ##########################################################
 
+## scaling fractor ##
+output eDP-1 scale 1
+
 ## touchpad ##
 
 input type:touchpad {
     tap enabled
     natural_scroll enabled
     dwt enabled
-    accel_profile "adaptive" # disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
+    accel_profile "adaptive" #disable mouse acceleration (enabled by default; to set it manually, use "adaptive" instead of "flat")
     pointer_accel 0.5 # set mouse sensitivity (between -1 and 1)
 }
 
@@ -47,7 +50,6 @@ input type:keyboard {
 ## Mouse ##
 
 input type:Mouse {
-        accel_profile "adaptive"
         scroll_factor 0.5
 }
 
@@ -261,8 +263,8 @@ bindsym control+mod1+u exec --no-startup-id pavucontrol
 #################                          screenshots                                              #################
 #####################################################################################################################
 
-bindsym Print exec maim -s --format png /dev/stdout | xclip -selection clipboard -t image/png -i
-bindsym $mod+Print exec maim --select | tee ~/Pictures/$(date +%s).png | xclip -sel c -t image/png
+bindsym Print exec grim $HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png
+bindsym $mod+Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png
 
 #####################################################################################################################
 #################                          audio settings                                           #################
@@ -285,11 +287,11 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20-
 #################                          i3 gaps next                                             #################
 #####################################################################################################################
 
-for_window [class="^.*"] border pixel 1
-gaps inner 5
-gaps outer 5
-#smart_gaps on
-#smart_borders on
+for_window [class="^.*"] border pixel 2
+gaps inner 8
+gaps outer 8
+# smart_gaps on
+smart_borders on
 
 
 
@@ -312,11 +314,11 @@ mode "$mode_gaps" {
 }
 
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
+        bindsym equal  gaps inner current plus 5
         bindsym minus gaps inner current minus 5
         bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
+        bindsym plus  gaps inner all plus 5
         bindsym Shift+minus gaps inner all minus 5
         bindsym Shift+0     gaps inner all set 0
 
@@ -367,20 +369,48 @@ mode "$mode_gaps_outer" {
 
     # Window color settings
         # target                 title     bg    text   indicator  border
-        client.focused           $pink     $base $text  $rosewater $peach
+        client.focused           $pink     $base $text  $rosewater $sapphire
         client.focused_inactive  $mauve    $base $text  $rosewater $overlay1
-        client.unfocused         $mauve    $base $text  $rosewater $mauve
+        client.unfocused         $mauve    $base $text  $rosewater $base
         client.urgent            $peach    $base $peach $overlay0  $peach
         client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
         client.background        $base
 
     ##STOP THEMING WM
 
-#################################################### blur ##########################################################
+#####################################################################################################################
+#################                          bar appearance                                           #################
+#####################################################################################################################
 
+    bar {
+        height 30
+            position top
+            font pango:FiraCode Nerd Font Propo 13
+            status_command i3status
+            tray_padding 0
+            strip_workspace_numbers yes
+
+            colors {
+                separator  #1f222d
+                    background $base
+                    statusline $mauve
+
+#                   border  background text
+                    focused_workspace  #1f222d #1f222d    #81a1c1
+                    active_workspace   #1f222d #252936    #5e81ac
+                    inactive_workspace #1f222d #1f222d    #4c566a
+                    urgent_workspace   #1f222d #1f222d    #ee829f
+                    binding_mode       #1f222d #81a1c1    #2e3440
+            }
+    }
+
+#################################################### blur ##########################################################
+ 
 blur enable
+blur_passes 1
+blur_radius 5
 shadows enable
-corner_radius 5
+corner_radius 7
 
 #####################################################################################################################
 #################                          picom and wallpaper                                      #################
@@ -389,8 +419,9 @@ corner_radius 5
 #if you want transparency on non-focused windows, ...
 # exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 # exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
-exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/wallhaven-0pzm8m_1920x1080.png
+exec_always --no-startup-id "$HOME/scripts/sway_pre.sh" &
+# exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh &
+exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/wallhaven-0pzm8m-1920x1080.png &
 
 #####################################################################################################################
 #################           autostart   -    execute applications at boot time                      #################
@@ -399,16 +430,12 @@ exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/wallhaven-0p
 
 #Authentication dialog (polkit-gnome)
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec_always --no-startup-id nm-applet &
 exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
+exec --no-startup-id killall nm-appet && nm-applet &
 exec_always --no-startup-id killall waybar &
-exec_always --no-startup-id waybar &
+# exec_always --no-startup-id waybar &
 exec systemctl --user status xdg-desktop-portal.service &
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK &
+exec hash dbus-update-activation-environment 2>/dev/null && \
+     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK &
 
-####################################################################################################################
-#####################################################################################################################
-#####################################################################################################################
-#################                          bar appearance                                           #################
-#####################################################################################################################
-#####################################################################################################################
-#####################################################################################################################

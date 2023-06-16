@@ -8,5 +8,4 @@ wallpaper = random.choice(wallpapers)
 
 FullPath = os.path.join(WallPath, wallpaper)
 
-os.system('killall swaybg')
-os.system(f'swaybg -m fill -i {FullPath} &')
+os.system(f'killall swaybg && swaybg -m fill -i {FullPath} &')

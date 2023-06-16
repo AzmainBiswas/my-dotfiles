@@ -1,6 +1,6 @@
 # Dracula theme for Alacritty
 import:
-  - ~/.config/alacritty/themes/catppuccin-mocha.yml
+  - /home/azmain/.config/alacritty/themes/thelovelace.yaml
 
 window:
   padding:
@@ -16,7 +16,7 @@ window:
   dimensions:
     columns: 150
     lines: 40
-  opacity: 0.9
+  opacity: 0.7
   decorations: none
 scrolling:
   history: 50000
