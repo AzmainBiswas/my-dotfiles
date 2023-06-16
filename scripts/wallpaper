@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+import os
+import random
+
+WallPath = '/mnt/media/wallpapers'
+wallpapers = os.listdir(WallPath)
+wallpaper = random.choice(wallpapers)
+
+FullPath = os.path.join(WallPath, wallpaper)
+
+os.system('killall swaybg')
+os.system(f'swaybg -m fill -i {FullPath} &')
