@@ -55,11 +55,14 @@ ethernet _first_ {
 battery all {
         format = "%status %percentage %remaining %emptytime"
         format_down = "No battery"
-        status_chr = " +"
-        status_bat = ""
-        status_full = "☻ "
+        status_chr = " 󱐋"
+        status_bat = " 🠫"
+        status_full = "☻  "
         path = "/sys/class/power_supply/BAT%d/uevent"
-        low_threshold = 60
+        low_threshold = 10
+        last_full_capacity = true
+        hide_seconds = true
+        integer_battery_capacity = true
 }
 
 disk "/" {

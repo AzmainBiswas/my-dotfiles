@@ -4,7 +4,6 @@
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-xrdb $HOME/.Xresources
 
 export PATH=/home/azmain/.local/bin:$HOME/bin:$HOME/scripts:$PATH
 export EDITOR=nvim

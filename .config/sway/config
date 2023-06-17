@@ -1,3 +1,32 @@
+#### importent shit #####
+
+exec systemctl --user mask xdg-desktop-portal-gnome &
+exec systemctl --user start xdg-desktop-portal-wrl.servic &
+exec systemctl --user start xdg-desktop-portal &
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK &
+exec hash dbus-update-activation-environment 2>/dev/null && \
+         dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK &
+#####################################################################################################################
+#################                          picom and wallpaper                                      #################
+#####################################################################################################################
+
+#if you want transparency on non-focused windows, ...
+exec_always --no-startup-id "$HOME/scripts/sway_pre.sh" &
+exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/wallhaven-0pzm8m-1920x1080.png &
+
+#####################################################################################################################
+#################           autostart   -    execute applications at boot time                      #################
+#####################################################################################################################
+
+
+#Authentication dialog (polkit-gnome)
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec xrdb $HOME/.Xresources &
+exec_always --no-startup-id $HOME/.config/sway/waybar.sh &
+exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
+exec_always --no-startup-id nm-applet &
+
+
 #####################################################################################################################
 #################                          Define the $mod variable/key                             #################
 #####################################################################################################################
@@ -289,8 +318,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20-
 #####################################################################################################################
 
 for_window [class="^.*"] border pixel 2
-gaps inner 8
-gaps outer 8
+gaps inner 5
+gaps outer 5
 # smart_gaps on
 smart_borders on
 
@@ -383,60 +412,34 @@ mode "$mode_gaps_outer" {
 #################                          bar appearance                                           #################
 #####################################################################################################################
 
-    bar {
-        height 30
-            position top
-            font pango:FiraCode Nerd Font Propo 13
-            status_command i3status
-            tray_padding 0
-            strip_workspace_numbers yes
-
-            colors {
-                separator  #1f222d
-                    background $base
-                    statusline $mauve
-
-#                   border  background text
-                    focused_workspace  #1f222d #1f222d    #81a1c1
-                    active_workspace   #1f222d #252936    #5e81ac
-                    inactive_workspace #1f222d #1f222d    #4c566a
-                    urgent_workspace   #1f222d #1f222d    #ee829f
-                    binding_mode       #1f222d #81a1c1    #2e3440
-            }
-    }
+#    bar {
+#        height 30
+#            position top
+#            font pango:FiraCode Nerd Font Propo 13
+#            status_command i3status
+#            tray_padding 0
+#            strip_workspace_numbers yes
+#
+#            colors {
+#                separator  #1f222d
+#                    background $base
+#                    statusline $mauve
+#
+##                   border  background text
+#                    focused_workspace  #1f222d #1f222d    #81a1c1
+#                    active_workspace   #1f222d #252936    #5e81ac
+#                    inactive_workspace #1f222d #1f222d    #4c566a
+#                    urgent_workspace   #1f222d #1f222d    #ee829f
+#                    binding_mode       #1f222d #81a1c1    #2e3440
+#            }
+#    }
 
 #################################################### blur ##########################################################
  
 blur enable
-blur_passes 1
-blur_radius 5
+blur_passes 2
+blur_radius 6
 shadows enable
 corner_radius 7
 
-#####################################################################################################################
-#################                          picom and wallpaper                                      #################
-#####################################################################################################################
-
-#if you want transparency on non-focused windows, ...
-# exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-# exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id "$HOME/scripts/sway_pre.sh" &
-# exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh &
-exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/wallhaven-0pzm8m-1920x1080.png &
-
-#####################################################################################################################
-#################           autostart   -    execute applications at boot time                      #################
-#####################################################################################################################
-
-
-#Authentication dialog (polkit-gnome)
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
-exec --no-startup-id killall nm-appet && nm-applet &
-exec_always --no-startup-id killall waybar &
-# exec_always --no-startup-id waybar &
-exec systemctl --user status xdg-desktop-portal.service &
-exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK &
-exec hash dbus-update-activation-environment 2>/dev/null && \
-     dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK &
 
