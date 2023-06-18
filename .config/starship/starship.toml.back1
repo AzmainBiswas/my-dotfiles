@@ -1,0 +1,91 @@
+format = """
+[](#9A348E)\
+$username\
+[](bg:#DA627D fg:#9A348E)\
+$directory\
+[](fg:#DA627D bg:#FCA17D)\
+$git_branch\
+$git_status\
+[](fg:#FCA17D bg:#06969A)\
+$c\
+$python\
+$lua\
+$nodejs\
+$rust\
+[](fg:#06969A bg:#33658A)\
+$time\
+[ ](fg:#33658A)\
+"""
+
+[username]
+show_always = true
+style_user = "bg:#9A348E"
+style_root = "bg:#9A348E"
+format = '[$user ]($style)'
+
+[character]
+success_symbol = ' [➜](bold green) '
+error_symbol = "[✖](bold red) "
+
+[directory]
+style = "bg:#DA627D"
+format = "[ $path ]($style)"
+read_only = "🔒"
+truncation_length = 2
+truncation_symbol = '…/'
+
+ 
+[directory.substitutions]
+"Documents" = "📄 "
+"Downloads" = "📥 "
+"Music" = "🎜 "
+"Pictures" = "📷 "
+
+[git_branch]
+symbol = " "
+format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
+ 
+[git_status]
+conflicted = "⚔️ "
+ahead = "🏎️ 💨 ×${count}"
+behind = "🐢 ×${count}"
+diverged = "🔱 🏎️ 💨 ×${ahead_count} 🐢 ×${behind_count}"
+untracked = "🛤️  ×${count}"
+stashed = "📦 "
+modified = "📝 ×${count}"
+staged = "🗃️  ×${count}"
+renamed = "📛 ×${count}"
+deleted = "🗑️  ×${count}"
+style = "bg:#FCA17D"
+format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+
+[time]
+disabled = false
+time_format = "%I:%M %P" # Hour:Minute Format
+style = "bg:#33658A"
+format = '[[ 🤍 $time ](bg:#33658A)]($style)'
+
+[lua]
+symbol = "🌙"
+style = "bg:#06969A"
+format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
+
+[c]
+symbol = "© "
+style = "bg:#06969A"
+format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
+
+[nodejs]
+symbol = "🔷 "
+style = "bg:#06969A"
+format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
+
+[rust]
+symbol = "🦀"
+style = "bg:#06969A"
+format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
+
+[python]
+# symbol = " "
+style = "bg:#06969A"
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'

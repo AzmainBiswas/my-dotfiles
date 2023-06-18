@@ -1,80 +1,106 @@
 format = """
-[](#9A348E)\
 $username\
-[](bg:#DA627D fg:#9A348E)\
 $directory\
-[](fg:#DA627D bg:#FCA17D)\
 $git_branch\
 $git_status\
-[](fg:#FCA17D bg:#06969A)\
+$fill\
+$cmd_duration $jobs\
 $c\
 $python\
 $lua\
 $nodejs\
-$rust\
-[](fg:#06969A bg:#33658A)\
+$line_break\
+$battery\
 $time\
-[ ](fg:#33658A)\
+$character
 """
 
+
 [username]
+style_user = "bold dimmed #9938f2"
+style_root = 'black bold'
+format = '[\[$user\]]($style) '
+disabled = false
 show_always = true
-style_user = "bg:#9A348E"
-style_root = "bg:#9A348E"
-format = '[$user ]($style)'
 
 [character]
-success_symbol = ' [➜](bold green) '
-error_symbol = "[✖](bold red) "
+success_symbol = '[❯](bold green) '
+error_symbol = '[❯](bold red) '
 
 [directory]
-style = "bg:#DA627D"
-format = "[ $path ]($style)"
-truncation_length = 2
-truncation_symbol = '…/'
- 
-[directory.substitutions]
-"Documents" = "📄 "
-"Downloads" = "📥 "
-"Music" = "🎜 "
-"Pictures" = "📷 "
+style = "#24c9a8"
+read_only = " "
+truncation_length = 4
+truncate_to_repo = false
+
+[battery]
+full_symbol = '  '
+charging_symbol = '󰂈 '
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦'
+
+[[battery.display]]
+threshold = 90
+style = 'bold #06969A'
+
+[[battery.display]]
+threshold = 100
+style = 'bold green'
 
 [git_branch]
-symbol = " "
-style = "bg:#FCA17D"
-format = '[[ $symbol $branch ](bg:#FCA17D)]($style)'
- 
+symbol = "  "
+style = "bold yellow"
+
 [git_status]
-style = "bg:#FCA17D"
-format = '[[($all_status$ahead_behind )](bg:#FCA17D)]($style)'
+format = '([\[$all_status$ahead_behind\]]($style) )'
+style = "bright-cyan"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
+
+[fill]
+symbol = ' '
+
+[cmd_duration]
+format = "[$duration]($style)"
+style = "yellow"
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[$symbol]($style)"
 
 [time]
+time_format = "%I:%M %p"
+format = "󱑀  $time($style) "
+style = "bright-white"
 disabled = false
-time_format = "%I:%M %P" # Hour:Minute Format
-style = "bg:#33658A"
-format = '[[ 🤍 $time ](bg:#33658A)]($style)'
-
-[lua]
-symbol = "🌙"
-style = "bg:#06969A"
-format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
 
 [c]
-symbol = "© "
-style = "bg:#06969A"
-format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
+symbol = '  '
+format = '[$symbol($version(-$name) )]($style)'
+style = 'bold green'
 
-[nodejs]
-symbol = "🔷 "
-style = "bg:#06969A"
-format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
-
-[rust]
-symbol = "🦀"
-style = "bg:#06969A"
-format = '[[ $symbol ($version) ](bg:#06969A)]($style)'
+[lua]
+symbol = '󰢱  '
+format = '[$symbol($version )]($style)'
+style = 'bold green'
 
 [python]
-# symbol = " "
-style = "bg:#06969A"
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\))]($style)'
+symbol = "  "
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+style = 'bold green'
+
+[nodejs]
+format = '[$symbol($version )]($style)'
+style = 'bold green'

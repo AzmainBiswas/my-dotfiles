@@ -2,7 +2,7 @@
 
 * {
     /* reference the color by using @color-name */
-    font-family: JetBrainsMono Nerd Font;
+    font-family:  RobotoMono Nerd Font;
     font-size: 15px;
     color: @text;
 }
@@ -53,7 +53,6 @@ window#waybar {
 #rofi,
 #wallpaper,
 #logout,
-
 #window,
 #workspaces {
     margin: 0 5px;
