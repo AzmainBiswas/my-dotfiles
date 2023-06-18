@@ -5,6 +5,7 @@ end
 set -U fish_greeting ""
 starship init fish | source
 
+abbr lf "ranger"
 abbr pacman "sudo pacman"
 abbr aur "pikaur"
 abbr pi "sudo pacman -Syu"
@@ -15,6 +16,8 @@ abbr oic "nvim ~/.config/i3/config"
 abbr spdl "spotdl --bitrate=320k"
 abbr smenv "source /mnt/media/venv_media/bin/activate.fish"
 abbr scenv "source /mnt/docs/codding-and-programming/Python/venv_cod/bin/activate.fish"
+abbr movies "cd /mnt/media/video/movies/"
+abbr vsong "cd /mnt/media/video/songs"
 
 alias cls "clear"
 alias .. "cd .."
@@ -49,3 +52,5 @@ function rga-fzf
     echo "opening $file" && \
     open "$file"
 end
+
+neofetch

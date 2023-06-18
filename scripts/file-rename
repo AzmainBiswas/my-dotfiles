@@ -2,6 +2,8 @@
 
 import os
 
+def prCyan(skk): print("\033[96m {}\033[00m" .format(skk))
+
 for file in os.listdir():
     Name, Ext = os.path.splitext(file)
     un_dash_names = Name.split("｜")
@@ -10,9 +12,9 @@ for file in os.listdir():
     un_space_name_join = "-".join(un_space_names)
     un_underscore_names = un_space_name_join.split("_")
     un_underscore_name_join = "-".join(un_underscore_names)
-    NewName = f"{un_underscore_name_join}{Ext}"
+    NewName = f"{un_underscore_name_join.lower()}{Ext}"
     os.rename(file, NewName)
 
 for file in os.listdir():
-    print(file)
+    prCyan(file)
 
