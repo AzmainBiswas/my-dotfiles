@@ -12,7 +12,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 
 #if you want transparency on non-focused windows, ...
 exec_always --no-startup-id "$HOME/scripts/sway_pre.sh" &
-exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/wallhaven-4geyge-1920x1080.png &
+exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/6tiwlpll7cd91.png &
 
 #####################################################################################################################
 #################           autostart   -    execute applications at boot time                      #################
