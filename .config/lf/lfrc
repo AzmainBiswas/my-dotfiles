@@ -37,7 +37,12 @@ cmd unarchive ${{
 
 # Trash bindings
 cmd delete ${{
-    rm -rf $f
+	clear; tput cup $(($(tput lines)/3)); tput bold
+	set -f
+	printf "%s\n\t" "$fx"
+	printf "delete?[y/N]"
+	read ans
+	[ $ans = "y" ] && rm -rf -- $fx
 }}
 
 cmd restore_trash ${{
@@ -50,6 +55,7 @@ map m
 
 map c $code "$f"
 map nv $nvim "$f"
+map T $kitty "$f"
 
 map uz unarchive
 map ae $wine "$f"
@@ -69,11 +75,10 @@ map bg setwallpaper
 map C clear
 
 # Movement
-map gD cd ~/documents
-map gd cd ~/downloads
-map gp cd ~/pictures
+map gD cd /mnt/media/downloads
+map gd cd /mnt/docs/Documents
 map gc cd ~/.config
-map gr cd ~/repos
-map gv cd ~/videos
-map gs cd ~/.local/bin
+map gv cd /mnt/media/video
+map gm cd /mnt/media/music
+map gc cd /mnt/docs/codding-and-programming
 map gt cd ~/.local/share/Trash/files

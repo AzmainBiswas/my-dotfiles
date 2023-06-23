@@ -5,6 +5,10 @@ end
 set -U fish_greeting ""
 starship init fish | source
 
+set TERM "kitty"
+set EDITOR "nvim"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+
 abbr pacman "sudo pacman"
 abbr aur "pikaur"
 abbr pi "sudo pacman -Syu"
@@ -13,14 +17,16 @@ abbr ofc "nvim ~/.config/fish/config.fish"
 abbr sfc "source ~/.config/fish/config.fish"
 abbr oic "nvim ~/.config/i3/config"
 abbr spdl "spotdl --bitrate=320k"
-abbr scenv "source /mnt/docs/codding-and-programming/python/.venv_cod/bin/activate.fish"
+abbr scenv "source ~/.venv-codding/bin/activate.fish"
 abbr movies "cd /mnt/media/video/movies/"
-abbr vsong "cd /mnt/media/video/songs"
+abbr vsong "cd /mnt/media/video/songs/"
+abbr ocf "cd /mnt/docs/codding-and-programming/"
+abbr tx "TERM=xterm-256color tmux"
 
 alias cls "clear"
 alias .. "cd .."
-alias ls "exa -aF --icons"
-alias ll "exa -alF --icons"
+alias ls "exa -aF --icons --color=always --group-directories-first"
+alias ll "exa -alF --icons --color=always --group-directories-first"
 alias nv "nvim"
 alias vim "nvim"
 alias v "nvim"
@@ -28,6 +34,10 @@ alias book "cd /mnt/docs/Book"
 alias music "cd /mnt/media/Music"
 alias video "cd /mnt/media/video"
 alias config '/usr/bin/git --git-dir=$HOME/my-dotfiles/ --work-tree=$HOME'
+
+# Merge Xresources
+alias merge='xrdb -merge ~/.Xresources'
+
 
 # Functions
 
@@ -51,4 +61,4 @@ function rga-fzf
     open "$file"
 end
 
-neofetch
+colorscript random

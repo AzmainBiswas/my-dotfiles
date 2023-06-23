@@ -3,8 +3,8 @@
 * {
     /* reference the color by using @color-name */
     font-family:  RobotoMono Nerd Font;
-    font-size: 15px;
-    color: @text;
+    font-size: 17px;
+    color: @lavender;
 }
   
 window#waybar {
@@ -22,7 +22,7 @@ window#waybar {
 
 #workspaces button.focused {
     background-color: @surface0;
-    border-bottom: 3px solid @maroon;
+   /* border-bottom: 3px solid @maroon; */
 }
 
 #workspaces button.urgent {
@@ -83,7 +83,7 @@ window#waybar {
 
 #network {
     padding: 5px 5px;
-    color: @sky;
+    color: @lavender;
 }
 
 #network.disconnected {
@@ -93,17 +93,17 @@ window#waybar {
 
 #memory {
     padding: 5px 5px;
-    color: @mauve;
+    color: @lavender;
 }
 
 #backlight {
     padding: 5px 5px;
-    color: @blue;
+    color: @lavender;
 }
 
 #battery {
     padding: 5px 5px;
-    color: @sapphire;
+    color: @lavender;
 }
 
 #battery.charging, #battery.plugged {
@@ -130,15 +130,15 @@ window#waybar {
 
 #clock {
     padding: 5px 5px;
-    color: @yellow;
+    color: @lavender;
 }
 
 #wallpaper {
-    color: @peach;
+    color: @lavender;
 }
 
 #logout {
-    color: @sapphire;
+    color: @lavender;
 }
 
 #tray > .needs-attention {

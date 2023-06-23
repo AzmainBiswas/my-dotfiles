@@ -16,7 +16,7 @@
        "format-icons": {
            "1": "",
            "2": "",
-           "3": "",
+           "3": "",
            "4": "󰨞",
            "5": "",
            "6": "",
@@ -61,7 +61,7 @@
             "critical": 15
         },
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󰂄",
+        "format-charging": "{capacity}% 󰢝",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
@@ -95,8 +95,8 @@
         "on-click": "kitty -e alsamixer"
     },
     "custom/rofi": {
-        "format": " 󰍜 ",
-        "on-click": "rofi -show drun",
+        "format": "  󰍜 ",
+        "on-click": "killall rofi || rofi -show drun",
         "tooltip-format": "rofi"
     },
     "custom/wallpaper": {

@@ -16,6 +16,7 @@ suppress_default_binds = true
 # Define some key bindings
 q = quit
 y = exec echo working!
+<w> = exec $HOME/scripts/set-wall.sh $imv_current_file
 
 # Image navigation
 <Left> = prev

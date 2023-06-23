@@ -1,6 +1,7 @@
 set statusbar-h-padding 0
 set statusbar-v-padding 0
-set pageipadding 2
+set page-padding 2
+set font "JetBrainsMono Nerd Font",10
 
 map u scroll half-up
 map d scroll half-down

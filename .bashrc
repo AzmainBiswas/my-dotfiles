@@ -5,11 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-# eval "$(starship init bash)"
+eval "$(starship init bash)"
 
-export PATH=/home/azmain/.local/bin:$HOME/bin:$HOME/scripts:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/scripts:$PATH
+export PATH=$HOME/.config/emacs/bin:$PATH
 export EDITOR=nvim
-export TERM=kitty
+export TERM="xterm-256color"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export media=/mnt/media
 export docs=/mnt/docs

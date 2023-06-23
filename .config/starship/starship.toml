@@ -3,34 +3,38 @@ $username\
 $directory\
 $git_branch\
 $git_status\
-$fill\
-$cmd_duration $jobs\
 $c\
 $python\
 $lua\
 $nodejs\
+$time\
 $line_break\
 $battery\
-$time\
-$character
+$cmd_duration \
+$character\
 """
 
+[fill]
+symbol = ' '
+
+[line_break]
+disabled = false
 
 [username]
 style_user = "bold dimmed #9938f2"
 style_root = 'black bold'
 format = '[\[$user\]]($style) '
 disabled = false
-show_always = true
+show_always = false
 
 [character]
-success_symbol = '[❯](bold green) '
-error_symbol = '[❯](bold red) '
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold red)'
 
 [directory]
 style = "#24c9a8"
 read_only = " "
-truncation_length = 4
+truncation_length = 100
 truncate_to_repo = false
 
 [battery]
@@ -58,6 +62,7 @@ style = 'bold green'
 [git_branch]
 symbol = "  "
 style = "bold yellow"
+format = '[\[ $symbol$branch(:$remote_branch) \]]($style) '
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
@@ -67,12 +72,10 @@ style = "bright-cyan"
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
-[fill]
-symbol = ' '
 
 [cmd_duration]
-format = "[$duration]($style)"
-style = "yellow"
+format = "[took $duration]($style)"
+style = "red"
 
 [jobs]
 symbol = ""
@@ -84,23 +87,23 @@ format = "[$symbol]($style)"
 time_format = "%I:%M %p"
 format = "󱑀  $time($style) "
 style = "bright-white"
-disabled = false
+disabled = true
 
 [c]
 symbol = '  '
-format = '[$symbol($version(-$name) )]($style)'
-style = 'bold green'
+format = '[\[ $symbol($version(-$name) )\]]($style)'
+style = 'bold blue'
 
 [lua]
 symbol = '󰢱  '
-format = '[$symbol($version )]($style)'
-style = 'bold green'
+format = '[\[ $symbol($version )\]]($style)'
+style = 'bold blue'
 
 [python]
 symbol = "  "
-format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
-style = 'bold green'
+format = '[\[ ${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )\]]($style)'
+style = 'bold yellow'
 
 [nodejs]
-format = '[$symbol($version )]($style)'
+format = '[\[ $symbol($version )\]]($style)'
 style = 'bold green'
