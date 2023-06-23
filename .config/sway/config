@@ -260,7 +260,7 @@ mode "resize" {
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
-bindsym $mod+Return exec kitty;focus
+bindsym $mod+Return exec alacritty;focus
 # bindsym Ctrl+Return exec alacritty;focus
 bindsym $mod+period exec killall rofi || rofi -modi emoji -show emoji
 
