@@ -1,6 +1,7 @@
 #### importent shit #####
 
 exec systemctl --user mask xdg-desktop-portal-gnome &
+exec systemctl --user mask xdg-desktop-portal-kde &
 exec systemctl --user unmask xdg-desktop-portal-wrl.servic &
 exec systemctl --user start xdg-desktop-portal-wrl.servic &
 exec systemctl --user start xdg-desktop-portal &
