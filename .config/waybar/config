@@ -102,7 +102,7 @@
     "custom/wallpaper": {
         "format": " 󰸉  ",
         "tooltip-format": "Change Wallpaper",
-        "on-click": "$HOME/scripts/wallpaper",
+        "on-click": "$HOME/bin/wallpaper",
     },
     "custom/logout": {
         "format": " ⏻ ",

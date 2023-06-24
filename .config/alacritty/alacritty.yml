@@ -16,7 +16,7 @@ window:
   dimensions:
     columns: 150
     lines: 40
-  opacity: 1.0
+  opacity: 0.8
   decorations: full
 scrolling:
   history: 50000

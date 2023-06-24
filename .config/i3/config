@@ -252,14 +252,16 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id nm-applet &
 exec --no-startup-id picom --config $HOME/.config/i3/picom.conf &
 exec numlockx on &
-exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
+exec dunst &
+# exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
+exec  xfce4-power-manager &
 
 
 #####################################################################################################################
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
-bindsym $mod+Return exec --no-startup-id kitty;focus
+bindsym $mod+Return exec alacritty;focus
 # bindsym $mod+Shift+Return exec alacritty;focus
 
 bindsym control+mod1+u exec --no-startup-id pavucontrol
