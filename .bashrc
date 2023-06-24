@@ -16,10 +16,11 @@ export media=/mnt/media
 export docs=/mnt/docs
 export book=/mnt/docs/Book
 
-alias ls='ls --color=auto'
+alias ls='exa -aF --icons'
+alias ll='exa -alF --icons'
 alias grep='grep --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/my-dotfiles/ --work-tree=$HOME'
 
 PS1='[\u@\h \W]\$ '
 
-exec fish
+#exec fish

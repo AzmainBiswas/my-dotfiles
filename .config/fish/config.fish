@@ -3,11 +3,18 @@ if status is-interactive
 end
 
 set -U fish_greeting ""
+
 starship init fish | source
 
-set TERM "kitty"
-set EDITOR "nvim"
+# Envioment variables
+set -x TERM "alacritty"
+set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -x FZF_DEFAULT_COMMAND 'ag -g "" --hidden --ignore .git'
+set -x STARSHIP_CONFIG /home/azmain/.config/starship/starship.toml
+
+# paths
+set -Ua fish_user_paths $HOME/bin $fish_user_path
 
 abbr pacman "sudo pacman"
 abbr aur "pikaur"
