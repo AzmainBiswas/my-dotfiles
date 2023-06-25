@@ -410,6 +410,7 @@ mode "$mode_gaps_outer" {
 #                    binding_mode       #1f222d #81a1c1    #2e3440
 #            }
 #    }
+
 #################################################### blur ##########################################################
  
 blur enable
@@ -417,3 +418,7 @@ blur_passes 2
 blur_radius 6
 shadows enable
 corner_radius 7
+
+########################### assigne ###################################
+for_window [class="firefox"] move to workspace 2
+for_window [class="mpv"] move to workspace 7

@@ -2,4 +2,4 @@
 
 ALL="/mnt/media/video/songs/"
 
-mpv $(fd . ${ALL} -e mpv -e mp3 -e webm | rofi -dmenu)
+mpv $(fd . ${ALL} -e mpv -e mp3 -e webm | rofi -dmenu -matching "fuzzy" -p "Videos")

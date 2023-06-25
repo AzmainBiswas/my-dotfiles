@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 MENU="dmenu"
-#MENU="rofi -dmenu"
 
 ALL="/mnt/media/video/songs/"
 BENGALI="/mnt/media/video/songs/bengali/"

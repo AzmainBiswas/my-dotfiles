@@ -10,7 +10,6 @@ starship init fish | source
 set -x TERM "alacritty"
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -x FZF_DEFAULT_COMMAND 'ag -g "" --hidden --ignore .git'
 set -x STARSHIP_CONFIG /home/azmain/.config/starship/starship.toml
 
 # paths
@@ -68,4 +67,4 @@ function rga-fzf
     open "$file"
 end
 
-colorscript random
+# colorscript random
