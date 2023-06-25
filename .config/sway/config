@@ -108,10 +108,10 @@ bindsym $mod+Shift+9 move container to workspace 9
 #####################################################################################################################
 
 # start dmenu
-# bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#1f222d' -nf '#81a1c1' -sb '#81a1c1' -sf '#1f222d' -fn 'FiraCode Nerd Font Propo:bold:pixelsize=18'
 # bindsym Ctrl+Space exec --no-startup-id rofi -show drun
 bindsym $mod+d exec killall rofi || rofi -show drun
-bindsym $mod+Shift+d exec killall rofi || rofi -show run
+# bindsym $mod+Shift+d exec killall rofi || rofi -show run
+bindsym $mod+Shift+d exec dmenu_run -p "Launcher" -l 14
 bindsym $mod+w exec killall rofi || rofi -show window
 
 #####################################################################################################################

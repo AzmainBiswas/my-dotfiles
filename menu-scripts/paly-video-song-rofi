@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+ALL="/mnt/media/video/songs/"
+
+mpv $(fd . ${ALL} -e mpv -e mp3 -e webm | rofi -dmenu)
