@@ -14,7 +14,7 @@ set -x FZF_DEFAULT_COMMAND 'ag -g "" --hidden --ignore .git'
 set -x STARSHIP_CONFIG /home/azmain/.config/starship/starship.toml
 
 # paths
-set -Ua fish_user_paths $HOME/bin $fish_user_path
+set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $fish_user_path
 
 abbr pacman "sudo pacman"
 abbr aur "pikaur"

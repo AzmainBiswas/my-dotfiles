@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "$HOME/bin/logout.sh",
     "text" : "Suspend",
     "keybind" : "u"
 }
