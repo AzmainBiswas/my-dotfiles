@@ -8,4 +8,7 @@ XDG_CURRENT_DESKTOP=gnome telegram-desktop &
 blueman-applet &
 xfce4-power-manager &
 dunst &
+mpd &
+# clipmenud &
+copyq &
 dunstify "hello $(whoami) wellcome" &

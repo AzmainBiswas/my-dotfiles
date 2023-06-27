@@ -1,0 +1,92 @@
+#!/usr/bin/env bash
+
+DMENU='dmenu -i -F -l 15 -p'
+FZF='fzf --height 70% --border rounded --reverse --prompt'
+
+if [ $1 == '-f' ]
+then
+    MENU=${FZF}
+else
+    MENU=${DMENU}
+fi
+
+menu() {
+    printf "1. Open ncmpcpp\n"
+    printf "2. Play A Song\n"
+    printf "3. Add to Queue\n"
+    printf "4. Play - Pause\n"
+    printf "5. Play Next\n"
+    printf "6. Play Prev\n"
+    printf "7. Stop\n"
+    printf "8. Current Song name\n"
+    printf "9. volume 25 \n"
+    printf "10. volume 50 \n"
+    printf "11. volume 75 \n"
+    printf "12. volume 100 \n"
+}
+
+play() {
+    music=$(mpc listall | ${MENU} 'music to play > ')
+    mpc clear
+    mpc -q add "$music"
+    mpc del 0 # for deleting current song
+    mpc play
+    mpc repeat on
+    dunstify "Playing $(printf ${music} | awk -F'/' '{ print $NF }')"
+}
+
+add() {
+    music2=$(mpc listall | ${MENU} 'Add to queue > ')
+    mpc -q add "$music2"
+    dunstify "Added $(printf ${music2} | awk -F'/' '{ print $NF }')"
+}
+
+choose=$(menu | ${MENU} "choose your option > " | awk -F. '{ print $1 }')
+
+case ${choose} in
+    1)
+	if [ $1 == '-f' ]
+	then
+	    ncmpcpp
+	else
+	    alacritty -e ncmpcpp
+	fi
+	;;
+    2)
+	play
+	;;
+    3)
+	add
+	;;
+    4)
+	mpc toggle
+	;;
+    5)
+	mpc next
+	dunstify "$(mpc current)"
+	;;
+    6)
+	mpc prev
+	dunstify "$(mpc current)"
+	;;
+    7)
+	mpc stop
+	;;
+    8)
+	dunstify "$(mpc current)"
+	;;
+    9)
+	mpc volume 25
+	;;
+    10)
+	mpc volume 50
+	;;
+    11)
+	mpc volume 75
+	;;
+    12)
+	mpc volume 100
+	;;
+    *)
+	printf "Plece choose currect value"
+esac

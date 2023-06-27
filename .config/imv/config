@@ -2,7 +2,7 @@
 
 [options]
 background = #181825
-overlay_font = RobotoMono Nerd Font Mono:24
+overlay_font = RobotoMono Nerd Font Mono:15
 # Suppress built-in key bindings, and specify them explicitly in this
 # config file.
 suppress_default_binds = true

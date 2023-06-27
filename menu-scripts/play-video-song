@@ -1,28 +1,28 @@
 #!/usr/bin/env bash
 
-MENU="dmenu"
+MENU="dmenu -i -F -l 15 -p"
+# MENU="rofi -dmenu" # DONT WORK
 
 ALL="/mnt/media/video/songs/"
 BENGALI="/mnt/media/video/songs/bengali/"
 ENGLISH="/mnt/media/video/songs/english/"
 HINDI="/mnt/media/video/songs/hindi/"
 
-LANG=$(printf "BENGALI\nENGLISH\nHINDI\nALL" | ${MENU} -i -p "Sclect Language" -l 15 )
+LANG=$(printf "Bengali\nEnglish\nHindi\nAll" | ${MENU} "Sclect Language")
 
 case "${LANG}" in
-    BENGALI)
-	mpv $(fd . ${BENGALI} -e webm -e mp4 -e mkv | ${MENU} -i -p "Sclect Video" -l 15)
+    Bengali)
+	mpv --loop $(fd . ${BENGALI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
 	;;
-    ENGLISH)
-	mpv $(fd . ${ENGLISH} -e webm -e mp4 -e mkv | ${MENU} -i -p "Sclect Video" -l 15)
+    English)
+	mpv --loop $(fd . ${ENGLISH} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
 	;;
-    HINDI)
-	mpv $(fd . ${HINDI} -e webm -e mp4 -e mkv | ${MENU} -i -p "Sclect Video" -l 15)
+    Hindi)
+	mpv --loop $(fd . ${HINDI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
 	;;
-    ALL)
-	mpv $(fd . ${ALL} -e webm -e mp4 -e mkv | ${MENU} -i -p "Sclect Video" -l 15)
+    All)
+	mpv --loop $(fd . ${ALL} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
 	;;
     *)
 	printf "You choice in invalide. Run the script again" | ${MENU}
 esac
-		
