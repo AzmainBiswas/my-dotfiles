@@ -70,7 +70,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 #####################################################################################################################
 
 # start dmenu
-bindsym $mod+d exec --no-startup-id dmenu_run -l 15 -p "Run"
+bindsym $mod+d exec --no-startup-id dmenu_run -i -F -l 15 -p "Run" 
 bindsym $mod+Shift+d exec --no-startup-id rofi -show drun
 bindsym $mod+Mod1+v exec --no-startup-id clipmenu -l 15 -p "Clipboard"
 
@@ -371,7 +371,7 @@ mode "$mode_gaps_outer" {
 #if you want transparency on non-focused windows, ...
 exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 exec_always --no-startup-id nitrogen --restore
-exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
+# exec_always --no-startup-id ~/.config/i3/scripts/mouse.sh
 
 
 #####################################################################################################################

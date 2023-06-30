@@ -3,7 +3,7 @@
 nm-applet &
 dunst &
 emacs --daemon &
-xfce4-power-manager &
+# xfce3-power-manager &
 mpd &
 clipmenud &
 numlock on &

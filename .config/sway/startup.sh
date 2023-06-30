@@ -9,6 +9,7 @@ blueman-applet &
 xfce4-power-manager &
 dunst &
 mpd &
-# clipmenud &
-copyq &
+clipmenud &
+# copyq &
+foot --server
 dunstify "hello $(whoami) wellcome" &

@@ -12,8 +12,7 @@ exec hash dbus-update-activation-environment 2>/dev/null && \
 #################                          picom and wallpaper                                      #################
 #####################################################################################################################
 
-#if you want transparency on non-focused windows, ...
-exec_always --no-startup-id swaybg -m fill -i /mnt/media/wallpapers/D7AoYZYzfH.jpg &
+exec_always --no-startup-id swaybg -m fill -i $HOME/.config/wall.png &
 
 #####################################################################################################################
 #################           autostart   -    execute applications at boot time                      #################
@@ -110,8 +109,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 # start dmenu
 #bbindsym Ctrl+Space exec --no-startup-id rofi -show drun
 bindsym $mod+d exec rofi -show drun || killall rofi
-# bindsym $mod+Shift+d exec killall rofi || rofi -show run
-bindsym $mod+Shift+d exec dmenu_run -p "Launcher" -l 14
+bindsym $mod+Shift+d exec killall rofi || rofi -show run
+# bindsym $mod+Shift+d exec dmenu_run -F -p "Launcher" -l 14
 bindsym $mod+w exec killall rofi || rofi -show window
 bindsym $mod+Mod1+v exec clipmenu -l 10 -p "Clipbord"
 
@@ -261,7 +260,8 @@ mode "resize" {
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
-bindsym $mod+Return exec alacritty;focus
+# bindsym $mod+Return exec alacritty;focus
+bindsym $mod+Return exec foot;focus
 # bindsym Ctrl+Return exec alacritty;focus
 bindsym $mod+period exec killall rofi || rofi -modi emoji -show emoji
 

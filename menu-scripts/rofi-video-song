@@ -2,4 +2,4 @@
 
 ALL="/mnt/media/video/songs/"
 
-mpv $(fd . ${ALL} -e mpv -e mp3 -e webm | rofi -dmenu -matching "fuzzy" -p "Videos")
+mpv $(fd . ${ALL} -e mpv -e mp3 -e webm | rofi -dmenu -matching "fuzzy" -p "Videos" -theme ~/.config/rofi/full-theme.rasi)

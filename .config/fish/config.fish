@@ -10,12 +10,12 @@ starship init fish | source
 set -x TERM "alacritty"
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -x FZF_DEFAULT_OPTS '--height 60% --layout=reverse --border'
+set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
-# set -x CM_LAUNCHER 'rofi'
+set -x CM_LAUNCHER 'rofi'
 
 # paths
-set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $fish_user_path
+set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $fish_user_path
 
 abbr pacman "sudo pacman"
 abbr aur "pikaur"
@@ -68,5 +68,3 @@ function rga-fzf
     echo "opening $file" && \
     open "$file"
 end
-
-# colorscript random
