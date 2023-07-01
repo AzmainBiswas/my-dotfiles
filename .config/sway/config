@@ -420,6 +420,8 @@ blur_radius 6
 shadows enable
 corner_radius 7
 
+layer_effects "waybar" blur enable; shadows enable; corner_radius 0
+
 ########################### assigne ###################################
 for_window [class="firefox"] move to workspace 2
 for_window [class="Google-chrome"] move to workspace 2

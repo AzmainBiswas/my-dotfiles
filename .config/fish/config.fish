@@ -17,10 +17,19 @@ set -x CM_LAUNCHER 'rofi'
 # paths
 set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $fish_user_path
 
+# Arch Linux
 abbr pacman "sudo pacman"
 abbr aur "pikaur"
 abbr pi "sudo pacman -Syu"
 abbr pr "sudo pacman -Rs"
+
+# Fedora Linux
+abbr du "sudo dnf upgrade"
+abbr di "sudo dnf install"
+abbr dr "sudo dnf remove"
+abbr ds "dnf search"
+abbr dnf "sudo dnf"
+
 abbr ofc "nvim ~/.config/fish/config.fish"
 abbr sfc "source ~/.config/fish/config.fish"
 abbr oic "nvim ~/.config/i3/config"
@@ -68,3 +77,5 @@ function rga-fzf
     echo "opening $file" && \
     open "$file"
 end
+
+neofetch

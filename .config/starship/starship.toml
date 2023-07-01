@@ -1,6 +1,9 @@
 format = """
-$username\
+$battery\
 $directory\
+$character\
+"""
+right_format = """
 $git_branch\
 $git_status\
 $c\
@@ -8,17 +11,15 @@ $python\
 $lua\
 $nodejs\
 $time\
-$line_break\
-$battery\
 $cmd_duration \
-$character\
 """
+add_newline = false 
 
 [fill]
 symbol = ' '
 
 [line_break]
-disabled = false
+disabled = true
 
 [username]
 style_user = "bold dimmed #9938f2"
@@ -34,8 +35,8 @@ error_symbol = '[❯](bold red)'
 [directory]
 style = "#24c9a8"
 read_only = " "
-truncation_length = 100
-truncate_to_repo = false
+truncation_length = 2
+truncation_symbol = '…/'
 
 [battery]
 full_symbol = '  '
