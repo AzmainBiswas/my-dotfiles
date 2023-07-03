@@ -77,3 +77,5 @@ function rga-fzf
     echo "opening $file" && \
     open "$file"
 end
+
+# neofetch
