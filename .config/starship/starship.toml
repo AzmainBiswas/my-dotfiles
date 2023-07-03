@@ -37,6 +37,7 @@ style = "#24c9a8"
 read_only = " "
 truncation_length = 2
 truncation_symbol = '…/'
+format = '[\[$path\]]($style)[$read_only]($read_only_style) '
 
 [battery]
 full_symbol = '  '

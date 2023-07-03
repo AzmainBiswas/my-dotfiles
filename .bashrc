@@ -3,6 +3,7 @@
 #
 
 eval "$(starship init bash)"
+eval $(thefuck --alias)
 
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$PATH
 export PATH=$HOME/.config/emacs/bin:$PATH
@@ -37,5 +38,6 @@ rga-fzf() {
 }
 
 #exec fish
+
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

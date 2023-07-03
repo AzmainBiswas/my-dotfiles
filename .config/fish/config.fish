@@ -5,14 +5,19 @@ end
 set -U fish_greeting ""
 
 starship init fish | source
+thefuck --alias | source
 
 # Envioment variables
 set -x TERM "alacritty"
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
+set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border '
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 set -x CM_LAUNCHER 'rofi'
+set -g FZF_CTRL_T_COMMAND "command find -L \$dir -type f 2> /dev/null | sed '1d; s#^\./##'"
+
+# Fzf settings
+set -U FZF_COMPLETE 2
 
 # paths
 set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $fish_user_path
@@ -30,6 +35,14 @@ abbr dr "sudo dnf remove"
 abbr ds "dnf search"
 abbr dnf "sudo dnf"
 
+# Git
+abbr ga "git add"
+abbr gcl "git clone"
+abbr gcm "git commit"
+abbr gph "git push"
+abbr gpl "git pull"
+
+abbr vf 'nvim $(fzf --height 75% --layout=reverse --border --preview "bat --style=numbers --color=always --line-range :500 {}" )'
 abbr ofc "nvim ~/.config/fish/config.fish"
 abbr sfc "source ~/.config/fish/config.fish"
 abbr oic "nvim ~/.config/i3/config"
@@ -40,6 +53,7 @@ abbr vsong "cd /mnt/media/video/songs/"
 abbr ocf "cd /mnt/docs/codding-and-programming/"
 abbr tx "TERM=xterm-256color tmux"
 
+alias sd "cd ~ && cd (find * -type d | fzf)"
 alias cls "clear"
 alias .. "cd .."
 alias ls "exa -aF --icons --color=always --group-directories-first"

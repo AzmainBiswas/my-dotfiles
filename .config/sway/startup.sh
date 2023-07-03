@@ -10,6 +10,7 @@ dunst &
 mpd &
 clipmenud &
 # copyq &
-foot --server
+kdeconnect-indicator &
+foot --server &
 dunstify "hello $(whoami) wellcome" &
 /usr/bin/emacs --daemon &

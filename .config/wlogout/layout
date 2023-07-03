@@ -1,6 +1,6 @@
 {
     "label" : "lock",
-    "action" : "swaylock -e -i /mnt/media/wallpapers/wallhaven-1k7v3v-1920x1080.png",
+    "action" : "swaylock -e -i $HOME/.config/wall.png",
     "text" : "Lock (l)",
     "keybind" : "l"
 }
