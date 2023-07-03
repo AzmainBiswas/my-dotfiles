@@ -6,5 +6,5 @@ emacs --daemon &
 # xfce3-power-manager &
 mpd &
 clipmenud &
-numlock on &
+numlockx & 
 dunstify "hello $(whoami) wellcome" &

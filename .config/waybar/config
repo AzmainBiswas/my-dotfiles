@@ -95,12 +95,12 @@
         "on-click": "alacritty -e alsamixer"
     },
     "custom/rofi": {
-        "format": "  󰍜 ",
+        "format": "  󰣛 ",
         "on-click": "killall rofi || rofi -show drun",
         "tooltip-format": "rofi"
     },
     "custom/wallpaper": {
-        "format": " 󰸉  ",
+        "format": "   ",
         "tooltip-format": "Change Wallpaper",
         "on-click": "$HOME/bin/wallpaper",
     },

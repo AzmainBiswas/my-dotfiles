@@ -1,30 +1,30 @@
 {
     "label" : "lock",
     "action" : "swaylock -e -i /mnt/media/wallpapers/wallhaven-1k7v3v-1920x1080.png",
-    "text" : "Lock",
+    "text" : "Lock (l)",
     "keybind" : "l"
 }
 {
     "label" : "reboot",
     "action" : "systemctl reboot",
-    "text" : "Reboot",
+    "text" : "Reboot (r)",
     "keybind" : "r"
 }
 {
     "label" : "shutdown",
     "action" : "systemctl poweroff",
-    "text" : "Shutdown",
+    "text" : "Shutdown (s)",
     "keybind" : "s"
 }
 {
     "label" : "logout",
     "action" : "killall sway",
-    "text" : "Logout",
+    "text" : "Logout (e)",
     "keybind" : "e"
 }
 {
     "label" : "suspend",
     "action" : "$HOME/bin/logout.sh",
-    "text" : "Suspend",
+    "text" : "Suspend (u)",
     "keybind" : "u"
 }

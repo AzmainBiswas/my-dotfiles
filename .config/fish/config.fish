@@ -53,7 +53,7 @@ alias video "cd /mnt/media/video"
 alias config '/usr/bin/git --git-dir=$HOME/my-dotfiles/ --work-tree=$HOME'
 
 # Merge Xresources
-alias merge='xrdb -merge ~/.Xresources'
+alias merge 'xrdb -merge ~/.Xresources'
 
 
 # Functions
@@ -77,5 +77,3 @@ function rga-fzf
     echo "opening $file" && \
     open "$file"
 end
-
-neofetch

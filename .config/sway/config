@@ -20,6 +20,7 @@ exec_always --no-startup-id swaybg -m fill -i $HOME/.config/wall.png &
 
 #Authentication dialog (polkit-gnome)
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id $HOME/.config/sway/waybar.sh &
 # exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
 exec --no-startup-id $HOME/.config/sway/startup.sh &
@@ -108,8 +109,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 # start dmenu
 #bbindsym Ctrl+Space exec --no-startup-id rofi -show drun
-bindsym $mod+d exec rofi -show drun || killall rofi
-bindsym $mod+Shift+d exec killall rofi || rofi -show run
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+Shift+d exec rofi -show run
 # bindsym $mod+Shift+d exec dmenu_run -F -p "Launcher" -l 14
 bindsym $mod+w exec killall rofi || rofi -show window
 bindsym $mod+Mod1+v exec clipmenu -l 10 -p "Clipbord"
@@ -291,13 +292,16 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 20+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20-
 
+bindsym $mod+End exec --no-startup-id $HOME/bin/yt-music.sh 
+bindsym End exec --no-startup-id $HOME/menu-scripts/audio-song
+
 #####################################################################################################################
 #################                          i3 gaps next                                             #################
 #####################################################################################################################
 
 for_window [class="^.*"] border pixel 2
-gaps inner 5
-gaps outer 5
+gaps inner 2
+gaps outer 2
 # smart_gaps on
 smart_borders on
 
@@ -427,4 +431,6 @@ for_window [class="firefox"] move to workspace 2
 for_window [class="Google-chrome"] move to workspace 2
 for_window [class="Brave"] move to workspace 2
 for_window [class="Emacs"] move to workspace 3
-
+for_window [class="(.*join\?action\=join.*|.*zoom.*)"] floating enable
+for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom - Licensed Account"] floating disable
+for_window [class="(.*join\?action\=join.*|.*zoom.*)" title="Zoom Meeting"] floating disable
