@@ -11,16 +11,17 @@ thefuck --alias | source
 set -x TERM "alacritty"
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border '
+set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 set -x CM_LAUNCHER 'rofi'
-set -g FZF_CTRL_T_COMMAND "command find -L \$dir -type f 2> /dev/null | sed '1d; s#^\./##'"
 
 # Fzf settings
-set -U FZF_COMPLETE 2
+set -Ua FZF_COMPLETE 3
+set -U fzf_preview_dir_cmd exa --all --color=always
+set -U fzf_fd_opts --hidden --exclude=.git
 
 # paths
-set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $fish_user_path
+set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $fish_user_path
 
 # Arch Linux
 abbr pacman "sudo pacman"
@@ -52,8 +53,8 @@ abbr movies "cd /mnt/media/video/movies/"
 abbr vsong "cd /mnt/media/video/songs/"
 abbr ocf "cd /mnt/docs/codding-and-programming/"
 abbr tx "TERM=xterm-256color tmux"
+abbr sd "cd (fd . --type directory | fzf --height 50% --layout=reverse --border )"
 
-alias sd "cd ~ && cd (find * -type d | fzf)"
 alias cls "clear"
 alias .. "cd .."
 alias ls "exa -aF --icons --color=always --group-directories-first"

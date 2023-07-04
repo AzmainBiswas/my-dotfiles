@@ -8,20 +8,20 @@ BENGALI="/mnt/media/video/songs/bengali/"
 ENGLISH="/mnt/media/video/songs/english/"
 HINDI="/mnt/media/video/songs/hindi/"
 
-LANG=$(printf "Bengali\nEnglish\nHindi\nAll" | ${MENU} "Sclect Language")
+LANG=$(printf "ALL\nBengali\nEnglish\nHindi" | ${MENU} "Sclect Language > ")
 
 case "${LANG}" in
     Bengali)
-	mpv --loop $(fd . ${BENGALI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
+	mpv --loop $(fd . ${BENGALI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     English)
-	mpv --loop $(fd . ${ENGLISH} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
+	mpv --loop $(fd . ${ENGLISH} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     Hindi)
-	mpv --loop $(fd . ${HINDI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
+	mpv --loop $(fd . ${HINDI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
-    All)
-	mpv --loop $(fd . ${ALL} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video")
+    ALL)
+	mpv --loop $(fd . ${ALL} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     *)
 	printf "You choice in invalide. Run the script again" | ${MENU}

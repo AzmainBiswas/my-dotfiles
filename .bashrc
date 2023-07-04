@@ -5,7 +5,7 @@
 eval "$(starship init bash)"
 eval $(thefuck --alias)
 
-export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.config/emacs/bin:$PATH
 export EDITOR=nvim
 export TERM="xterm-256color"

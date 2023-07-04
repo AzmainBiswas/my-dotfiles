@@ -39,7 +39,7 @@ setopt hist_verify
 setopt inc_append_history
 setopt share_history
 
-export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
 export TERM="xterm-256color"
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border'
