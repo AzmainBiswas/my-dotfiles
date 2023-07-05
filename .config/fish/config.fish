@@ -8,12 +8,19 @@ starship init fish | source
 thefuck --alias | source
 
 # Envioment variables
+# flameshot 
+set -xU SDL_VIDEODRIVER wayland
+set -xU _JAVA_AWT_WM_NONREPARENTING 1
+set -xU QT_QPA_PLATFORM wayland
+set -xU XDG_CURRENT_DESKTOP sway
+set -xU XDG_SESSION_DESKTOP sway
+
 set -x TERM "alacritty"
 set -x EDITOR "nvim"
 set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
-set -x CM_LAUNCHER 'rofi'
+# set -x CM_LAUNCHER 'rofi'
 
 # Fzf settings
 set -Ua FZF_COMPLETE 3
@@ -94,3 +101,4 @@ function rga-fzf
 end
 
 # neofetch
+# colorscript random

@@ -10,13 +10,13 @@
 window#waybar {
     /* background-color: shade(@base, 0.8);*/
     background-color: rgb(0, 0, 0);
-    border: 3px solid alpha(@crust, 0.3);
+    /* border: 3px solid alpha(@crust, 0.3); */
     transition-property: background-color;
     transition-duration: .5s;
 }
 
 #workspaces button {
-    padding: 9px 9px;
+    /* padding: 9px 9px; */
     background-color: transparent;
     color: @text;
 }

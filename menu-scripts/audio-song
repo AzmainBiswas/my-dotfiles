@@ -4,10 +4,12 @@ DMENU='dmenu -i -F -l 15 -p'
 FZF='fzf --height 70% --border rounded --reverse --prompt'
 terminal=foot
 
+# have to add this function
+
 menu() {
     printf "0. Play random songs\n"
     printf "1. Play A Song\n"
-    printf "2. Add to Queue\n"
+    printf "2. Play A Folder\n"
     printf "3. Play - Pause\n"
     printf "4. Play Next\n"
     printf "5. Play Prev\n"
@@ -33,14 +35,27 @@ play() {
     mpc -q add "$music"
     mpc play
     mpc repeat on
-    dunstify "Playing $(mpc current)"
+    dunstify "Playing" "$(mpc current)"
 }
 
 add() {
     music2=$(mpc listall | ${MENU} 'Add to queue > ')
     mpc -q add "$music2"
-    dunstify "Added $(printf ${music2})"
+    dunstify "Added" "$(printf ${music2})"
 }
+
+FolderPlay() {
+    folder=$(fd . /mnt/media/music/ --type directory | cut -b 18-1000 | ${MENU} 'Choose a Folder > ' )
+    mpc stop
+    mpc clear
+    mpc add "${folder}"
+    mpc repeat on
+    mpc random off
+    mpc play
+    dunstify "Added" "$(printf ${folder})"
+    dunstify "Playing" "$(mpc current)"
+}
+
 
 if [ $1 == '-f' ]
 then
@@ -57,16 +72,16 @@ case ${choose} in
     1)
 	play ;;
     2)
-	add ;;
+	FolderPlay ;;
     3)
 	mpc toggle ;;
     4)
 	mpc next
-	dunstify "$(mpc current)"
+	dunstify "Playing" "$(mpc current)"
 	;;
     5)
 	mpc prev
-	dunstify "$(mpc current)"
+	dunstify "Playing" "$(mpc current)"
 	;;
     6)
 	if [ $1 == '-f' ]
@@ -79,7 +94,7 @@ case ${choose} in
     7)
 	mpc stop ;;
     8)
-	dunstify "$(mpc current)" ;;
+	dunstify "Playing" "$(mpc current)" ;;
     9)
 	mpc volume 25 ;;
     10)

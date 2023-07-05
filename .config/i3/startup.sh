@@ -7,4 +7,6 @@ emacs --daemon &
 mpd &
 clipmenud &
 numlockx & 
+kdeconnect-indicator &
 dunstify "hello $(whoami) wellcome" &
+flameshot &

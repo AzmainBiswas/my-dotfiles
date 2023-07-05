@@ -17,6 +17,7 @@ suppress_default_binds = true
 q = quit
 y = exec echo working!
 <w> = exec $HOME/bin/set-wall.sh $imv_current_file
+<Ctrl+d> = exec rm $imv_current_file
 
 # Image navigation
 <Left> = prev
