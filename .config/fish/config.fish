@@ -17,7 +17,7 @@ set -xU XDG_SESSION_DESKTOP sway
 
 set -x TERM "alacritty"
 set -x EDITOR "nvim"
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 # set -x CM_LAUNCHER 'rofi'

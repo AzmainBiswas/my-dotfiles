@@ -113,13 +113,13 @@ bindsym $mod+d exec rofi -show drun
 bindsym $mod+Shift+d exec rofi -show run
 # bindsym $mod+Shift+d exec dmenu_run -F -p "Launcher" -l 14
 bindsym $mod+w exec killall rofi || rofi -show window
-bindsym $mod+Mod1+v exec clipmenu -l 10 -p "Clipbord"
+bindsym $mod+v exec clipmenu -l 10 -p "Clipbord"
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
 #####################################################################################################################
 
-bindsym $mod+x exec --no-startup-id wlogout
+bindsym Ctrl+Escape exec --no-startup-id wlogout
 
 
 #####################################################################################################################
@@ -283,6 +283,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+## MPD ##
+bindsym Ctrl+Shift+k exec mpc toggle
+bindsym Ctrl+Shift+l exec mpc next && dunstify "Playing" "$(mpc current)"
+bindsym Ctrl+Shift+j exec mpc prev && dunstify "Playing" "$(mpc current)"
 
 #####################################################################################################################
 #################                          light                                               #################

@@ -1,6 +1,14 @@
-# Dracula theme for Alacritty
-import:
-  - /home/azmain/.config/alacritty/themes/monokai_charcoal.yaml
+# import:
+#   - /home/azmain/.config/alacritty/themes/monokai_charcoal.yaml
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#ffffff'
+    
+  # Cursor colors
+  cursor:
+    text:   '#000000'
+    cursor: '#ffffff'
 
 window:
   padding:
@@ -16,7 +24,7 @@ window:
   dimensions:
     columns: 150
     lines: 40
-  opacity: 0.9
+  opacity: 0.8
   decorations: full
 scrolling:
   history: 50000
@@ -56,7 +64,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Beam
+    shape: Block
 
     # Cursor blinking state
     #

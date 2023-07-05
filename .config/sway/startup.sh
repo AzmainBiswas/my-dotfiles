@@ -11,6 +11,7 @@ mpd &
 clipmenud &
 # copyq &
 kdeconnect-indicator &
+xrdb -load .Xresources &
 foot --server &
 dunstify "hello $(whoami) wellcome" &
 /usr/bin/emacs --daemon &
