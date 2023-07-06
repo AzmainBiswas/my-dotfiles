@@ -10,16 +10,13 @@ menu() {
     printf "0. Play random songs\n"
     printf "1. Play A Song\n"
     printf "2. Play A Folder\n"
-    printf "3. Play - Pause\n"
-    printf "4. Play Next\n"
-    printf "5. Play Prev\n"
-    printf "6. Open ncmpcpp(Music palyer)\n"
-    printf "7. Stop\n"
-    printf "8. Current Song name\n"
-    printf "9. volume 25 \n"
-    printf "10. volume 50 \n"
-    printf "11. volume 75 \n"
-    printf "12. volume 100 \n"
+    printf "3. Open ncmpcpp(Music palyer)\n"
+    printf "4. Stop\n"
+    printf "5. Current Song name\n"
+    printf "6. volume 25 \n"
+    printf "7. volume 50 \n"
+    printf "8. volume 75 \n"
+    printf "9. volume 100 \n"
 }
 
 playRandom() {
@@ -27,6 +24,7 @@ playRandom() {
     mpc add /
     mpc random on
     mpc play
+    dunstify "Playing" "$(mpc current)"
 }
 
 play() {
@@ -46,11 +44,15 @@ add() {
 
 FolderPlay() {
     folder=$(fd . /mnt/media/music/ --type directory | cut -b 18-1000 | ${MENU} 'Choose a Folder > ' )
+    if [ "$folder" == "" ]
+    then
+	exit
+    fi
     mpc stop
     mpc clear
     mpc add "${folder}"
     mpc repeat on
-    mpc random off
+    mpc random on
     mpc play
     dunstify "Added" "$(printf ${folder})"
     dunstify "Playing" "$(mpc current)"
@@ -74,16 +76,6 @@ case ${choose} in
     2)
 	FolderPlay ;;
     3)
-	mpc toggle ;;
-    4)
-	mpc next
-	dunstify "Playing" "$(mpc current)"
-	;;
-    5)
-	mpc prev
-	dunstify "Playing" "$(mpc current)"
-	;;
-    6)
 	if [ $1 == '-f' ]
 	then
 	    ncmpcpp
@@ -91,17 +83,17 @@ case ${choose} in
 	    $terminal -e ncmpcpp
 	fi
 	;;
-    7)
+    4)
 	mpc stop ;;
-    8)
+    5)
 	dunstify "Playing" "$(mpc current)" ;;
-    9)
+    6)
 	mpc volume 25 ;;
-    10)
+    7)
 	mpc volume 50 ;;
-    11)
+    8)
 	mpc volume 75 ;;
-    12)
+    9)
 	mpc volume 100 ;;
     *)
 	printf "Plece choose currect value"

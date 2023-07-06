@@ -1,3 +1,6 @@
 #!/usr/bin/env bash
 
-simple-mtpfs --device 1 ~/Phone/
+phone=$(simple-mtpfs -l | dmenu -l 2 -p "Select > " | cut -d ":" -f1)
+simple-mtpfs --device $phone  ~/Phone/
+sleep 3
+simple-mtpfs --device $phone  ~/Phone/

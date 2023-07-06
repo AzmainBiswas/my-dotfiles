@@ -5,9 +5,16 @@ FZF='fzf --height 70% --border rounded --reverse --prompt'
 ROFI='rofi -dmenu -i -theme ~/.config/rofi/full-theme.rasi -p'
 
 BOOK=/mnt/docs/Book
+PROJ=/mnt/docs/Poject
+NOTE=/mnt/docs/notes
+
 
 main() {
-    choose=$(fd . $BOOK -e pdf -e djvu | $MENU "Book Name > " )
+    choose=$(fd . $BOOK $PROJ $NOTE -e pdf -e djvu | $MENU "Book Name > " )
+    if [ "$choose" == "" ]
+    then
+	exit
+    fi
     zathura "$choose"
 }
 

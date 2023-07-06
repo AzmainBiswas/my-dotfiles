@@ -43,7 +43,5 @@ rga-fzf() {
 	xdg-open "$file"
 }
 
-#exec fish
-
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+neofetch

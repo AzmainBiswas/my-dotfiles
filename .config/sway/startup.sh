@@ -3,12 +3,12 @@
 nm-applet --indicator &
 # crow &
 # syncthingtray --wait &
-XDG_CURRENT_DESKTOP=gnome telegram-desktop &
 blueman-applet &
 xfce4-power-manager &
 dunst &
 mpd &
-clipmenud &
+# clipmenud &
+wl-clipboard-history -t &
 # copyq &
 kdeconnect-indicator &
 xrdb -load .Xresources &

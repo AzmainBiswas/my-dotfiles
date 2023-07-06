@@ -109,11 +109,11 @@ bindsym $mod+Shift+9 move container to workspace 9
 
 # start dmenu
 #bbindsym Ctrl+Space exec --no-startup-id rofi -show drun
-bindsym $mod+d exec rofi -show drun
+bindsym $mod+d exec rofi -show drun 
 bindsym $mod+Shift+d exec rofi -show run
 # bindsym $mod+Shift+d exec dmenu_run -F -p "Launcher" -l 14
-bindsym $mod+w exec killall rofi || rofi -show window
-bindsym $mod+v exec clipmenu -l 10 -p "Clipbord"
+bindsym $mod+w exec rofi -show window
+bindsym $mod+v exec $HOME/bin/clip-rofi
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -298,7 +298,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 20+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20-
 
 bindsym $mod+End exec --no-startup-id $HOME/bin/yt-music.sh 
-bindsym End exec --no-startup-id $HOME/menu-scripts/audio-song
+bindsym End exec --no-startup-id $HOME/bin/audio-song
 
 #####################################################################################################################
 #################                          i3 gaps next                                             #################
@@ -308,7 +308,7 @@ for_window [class="^.*"] border pixel 2
 gaps inner 5
 gaps outer 5
 # smart_gaps on
-smart_borders on
+# smart_borders on
 
 
 
