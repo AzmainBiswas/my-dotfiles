@@ -1,14 +1,5 @@
-# import:
-#   - /home/azmain/.config/alacritty/themes/monokai_charcoal.yaml
-colors:
-  primary:
-    background: '#000000'
-    foreground: '#ffffff'
-    
-  # Cursor colors
-  cursor:
-    text:   '#000000'
-    cursor: '#ffffff'
+import:
+  - /home/azmain/.config/alacritty/themes/gruvbox_bark.yaml
 
 window:
   padding:
@@ -23,8 +14,8 @@ window:
 
   dimensions:
     columns: 150
-    lines: 40
-  opacity: 0.8
+    lines: 35
+  opacity: 1.0
   decorations: full
 scrolling:
   history: 50000
@@ -35,20 +26,20 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: JetBrainsMono Nerd Font
+    family: CaskaydiaCove Nerd Font Mono
     style: Regular
   bold:
-    family: JetBrainsMono Nerd Font
+    family: CaskaydiaCove Nerd Font Mono
     style: Bold
   italic:
-    family: JetBrainsMono Nerd Font
+    family: CaskaydiaCove Nerd Font Mono
     style: Italic
   bold_italic:
-    family: JetBrainsMono Nerd Font 
+    family: CaskaydiaCove Nerd Font Mono 
     style: Bold Italic
 
   # Point size
-  size: 14.0
+  size: 15.0
 draw_bold_text_with_bright_colors: true
 
 

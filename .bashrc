@@ -2,11 +2,11 @@
 # ~/.bashrc
 #
 
-eval "$(starship init bash)"
+# eval "$(starship init bash)"
+eval "$(oh-my-posh init bash --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json)"
 eval $(thefuck --alias)
 
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.config/emacs/bin:$PATH
 export EDITOR=nvim
 export TERM="xterm-256color"
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border'
