@@ -3,8 +3,8 @@ import:
 
 window:
   padding:
-    x: 20
-    y: 20
+    x: 0
+    y: 5
 
   class:
     # Application instance name
@@ -15,7 +15,7 @@ window:
   dimensions:
     columns: 150
     lines: 35
-  opacity: 1.0
+  opacity: 0.9
   decorations: full
 scrolling:
   history: 50000

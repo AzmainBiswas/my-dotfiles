@@ -110,8 +110,8 @@ bindsym $mod+Shift+9 move container to workspace 9
 # start dmenu
 #bbindsym Ctrl+Space exec --no-startup-id rofi -show drun
 bindsym $mod+d exec rofi -show drun 
-bindsym $mod+Shift+d exec rofi -show run
-# bindsym $mod+Shift+d exec dmenu_run -F -p "Launcher" -l 14
+# bindsym $mod+Shift+d exec rofi -show run
+bindsym $mod+Shift+d exec dmenu_run -F -p "Launcher > " -l 14
 bindsym $mod+w exec rofi -show window
 bindsym $mod+v exec $HOME/bin/clip-rofi
 

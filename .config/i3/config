@@ -394,15 +394,15 @@ bar {
     strip_workspace_numbers yes
 
     colors {
-            separator  #000000
-            background #000000
-            statusline #ffffff
+            separator  #1d2021
+            background #1d2021
+            statusline #ebdbb2
 
             #                   border  background text
-            focused_workspace  #1f222d #474747    #ffffff
+            focused_workspace  #1f222d #474747    #ebdbb2
             active_workspace   #1f222d #252936    #5e81ac
-            inactive_workspace #000000 #000000    #4c566a
-            urgent_workspace   #1f222d #1f222d    #ee829f
+            inactive_workspace #282828 #282828    #4c566a
+            urgent_workspace   #1f222d #1f222d    #d3869b
             binding_mode       #1f222d #81a1c1    #2e3440
     }
 }
@@ -411,11 +411,11 @@ bar {
 
     # Window color settings
     # class                 border  backgr. text    indicator
-    client.focused          #81a1c1 #81a1c1 #ffffff #81a1c1
+    client.focused          #fabd2f #83a598 #ebdbb2 #83a598
     client.unfocused        #2e3440 #1f222d #888888 #1f222d
     client.focused_inactive #2e3440 #1f222d #888888 #1f222d
     client.placeholder      #2e3440 #1f222d #888888 #1f222d
-    client.urgent           #900000 #900000 #ffffff #900000
+    client.urgent           #900000 #900000 #ebdbb2 #900000
 
     client.background       #242424
 

@@ -1,29 +1,39 @@
-@import "mocha.css";
+/* @import "mocha.css"; */
+
+@define-color bg    #1d2021;
+@define-color bg2   #504945;
+@define-color text  #d5c4a1;
+@define-color lavender  #83a698;
+@define-color orange    #fe8019;
+@define-color purple    #d3869b;
+@define-color red   #fb4934;
+@define-color green #b8bb26;
+@define-color aqua  #8ec07c;
 
 * {
-    /* reference the color by using @color-name */
     font-family:  RobotoMono Nerd Font;
-    font-size: 17px;
-    color: @lavender;
+    font-weight: bold;
+    font-size: 16px;
+    color: @text;
 }
   
 window#waybar {
-    /* background-color: shade(@base, 0.8);*/
-    background-color: rgb(0, 0, 0);
-    /* border: 3px solid alpha(@crust, 0.3); */
-    transition-property: background-color;
-    transition-duration: .5s;
+    border-bottom-style: inset;
+    background-color: @bg;
+    border-top: 2px solid @aqua;
+   /* transition-property: background-color;
+    transition-duration: .5s;*/
 }
 
-#workspaces button {
-    /* padding: 9px 9px; */
-    background-color: transparent;
-    color: @text;
+/* Workspace Buttons */
+#workspaces button label{
+    color: @aqua;
 }
-
+#workspaces button.focused label {
+    color: @bg;
+}
 #workspaces button.focused {
-    background-color: rgb(43, 43, 43);
-   /* border-bottom: 3px solid @maroon; */
+    background: @aqua; 
 }
 
 #workspaces button.urgent {
@@ -32,8 +42,9 @@ window#waybar {
 
 #mode {
     padding: 5px 5px;
-    background-color: @surface1;
-    border-bottom: 3px solid @mauve;
+    background-color: @bg2;
+    border-bottom: 2px solid @aqua;
+    border-top: 2px solid @aqua;
 }
 
 #clock,
@@ -65,7 +76,7 @@ window#waybar {
 
 #scratchpad {
     padding: 0 3px;
-    color: @mauve;
+    color: @aqua;
 }
 
 #scratchpad.empty {
@@ -84,7 +95,7 @@ window#waybar {
 
 #network {
     padding: 5px 5px;
-    color: @lavender;
+    color: @green;
 }
 
 #network.disconnected {
@@ -99,7 +110,7 @@ window#waybar {
 
 #backlight {
     padding: 5px 5px;
-    color: @lavender;
+    color: @aqua;
 }
 
 #battery {
@@ -115,7 +126,7 @@ window#waybar {
 @keyframes blink {
     to {
         background-color: @surface2;
-        color: @pink;
+        color: @rad;
     }
 }
 
@@ -131,15 +142,15 @@ window#waybar {
 
 #clock {
     padding: 5px 5px;
-    color: @lavender;
+    color: @purple;
 }
 
 #wallpaper {
-    color: @lavender;
+    color: @aqua;
 }
 
 #logout {
-    color: @lavender;
+    color: @orange;
 }
 
 #tray > .needs-attention {

@@ -1,6 +1,6 @@
-Sxiv.background: #000000
-Sxiv.foreground: #ffffff
-Sxiv.font: RobotoMono Nerd Font:size=12 
+Sxiv.background: #1d2021
+Sxiv.foreground: #d5c4a1
+Sxiv.font: RobotoMono Nerd Font:size=13
 
 Xcursor.theme: Qogir-derk
 Xcursor.size: 16
