@@ -4,11 +4,23 @@ import os
 import random
 
 WallPath = "/mnt/media/wallpapers"
-wallpapers = os.listdir(WallPath)
-wallpaper = random.choice(wallpapers)
 
-FullPath = os.path.join(WallPath, wallpaper)
 
-os.system(f'cp -f "{FullPath}" $HOME/.config/wall.png')
+def Choose_wall():
+    list_wallpaper = []
+    all_wallpapers = os.listdir(WallPath)
+    for _ in range(6):
+        ch_wallpaper = random.choice(all_wallpapers)
+        list_wallpaper.append(ch_wallpaper)
+        all_wallpapers.remove(ch_wallpaper)
+    wallpaper = random.choice(list_wallpaper)
+    return wallpaper
 
-os.system(f"killall swaybg && swaybg -m fill -i $HOME/.config/wall.png &")
+
+if __name__ == "__main__":
+    wallpaper = Choose_wall()
+    fullpath = os.path.join(WallPath, wallpaper)
+    os.system(f'cp -f "{fullpath}" $HOME/.config/wall.png')
+
+    # set wallaper
+    os.system("killall swaybg && swaybg -m fill -i $HOME/.config/wall.png &")

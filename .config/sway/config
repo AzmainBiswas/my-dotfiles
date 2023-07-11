@@ -423,11 +423,11 @@ mode "$mode_gaps_outer" {
 
 #################################################### blur ##########################################################
  
-# blur enable
-# blur_passes 2
-# blur_radius 6
-# shadows enable
-# corner_radius 7
+blur enable
+shadows enable
+corner_radius 12
+scratchpad_minimize enable
+titlebar_separator enable
 
 # layer_effects "waybar" blur enable; shadows enable; corner_radius 0
 

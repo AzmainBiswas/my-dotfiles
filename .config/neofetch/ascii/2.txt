@@ -1,4 +1,4 @@
-${c2}                       XXXXXXXX
+${c1}                       XXXXXXXX
    /|             XXXXXXXX|\XXXXXXXXX
  /*/         XXXXXXXXXXXXXX\*\XXXXXXXXXXXX
 |**\       X _____XXXXXXXXX/**|XXXXXXXXXXXXX
