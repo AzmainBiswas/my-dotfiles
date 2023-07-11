@@ -17,8 +17,8 @@ set -xU QT_QPA_PLATFORM wayland
 set -xU XDG_CURRENT_DESKTOP sway
 set -xU XDG_SESSION_DESKTOP sway
 
-set -x TERM "alacritty"
-set -x EDITOR "nvim"
+set -x TERM alacritty
+set -x EDITOR nvim
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
@@ -34,7 +34,7 @@ set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.loca
 
 # Arch Linux
 abbr pacman "sudo pacman"
-abbr aur "pikaur"
+abbr aur pikaur
 abbr pi "sudo pacman -Syu"
 abbr pr "sudo pacman -Rs"
 
@@ -55,7 +55,6 @@ abbr gpl "git pull"
 abbr vf 'nvim $(fzf --height 75% --layout=reverse --border --preview "bat --style=numbers --color=always --line-range :500 {}" )'
 abbr ofc "nvim ~/.config/fish/config.fish"
 abbr sfc "source ~/.config/fish/config.fish"
-abbr oic "nvim ~/.config/i3/config"
 abbr spdl "spotdl --bitrate=320k"
 abbr scenv "source ~/.venv-codding/bin/activate.fish"
 abbr movies "cd /mnt/media/video/movies/"
@@ -64,14 +63,14 @@ abbr ocf "cd /mnt/docs/codding-and-programming/"
 abbr tx "TERM=xterm-256color tmux"
 abbr sd "cd (fd . --type directory | fzf --height 50% --layout=reverse --border )"
 
-alias cls "clear"
+alias cls clear
 alias .. "cd .."
 alias ls "exa -aF --icons --color=always --group-directories-first"
 alias ll "exa -alF --icons --color=always --group-directories-first"
 alias tree "exa -F --icons --color=always --tree"
-alias nv "nvim"
-alias vim "nvim"
-alias v "nvim"
+alias nv nvim
+alias vim nvim
+alias v nvim
 alias book "cd /mnt/docs/Book"
 alias music "cd /mnt/media/Music"
 alias video "cd /mnt/media/video"
@@ -98,9 +97,7 @@ function rga-fzf
             --phony -q "$argv[-1]" \
             --bind "change:reload:$RG_PREFIX {q}" \
             --preview-window='50%:wrap'
-    ) && \
-    echo "opening $file" && \
-    open "$file"
+    ) && echo "opening $file" && open "$file"
 end
 
 # neofetch
