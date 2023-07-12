@@ -13,7 +13,7 @@
        "disable-scroll": false,
        "all-outputs": true,
        //"format": "{name}: {icon}",
-       "format": "{name}:{icon}",
+       "format": "{name}",
        "format-icons": {
            "1": "",
            "2": "",
@@ -42,6 +42,32 @@
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a %d-%B-%y %I:%M %p}"
+    },
+        "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 2,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "memory": {
         "format": "{}% "
@@ -96,7 +122,7 @@
         "on-click": "alacritty -e alsamixer"
     },
     "custom/rofi": {
-        "format": "  󰣛 ",
+        "format": "  ",
         "on-click": "killall rofi || rofi -show drun",
         "tooltip-format": "rofi"
     },
@@ -109,5 +135,9 @@
         "format": " ⏻ ",
         "on-click": "/usr/bin/wlogout",
     },
+    "custom/audio": {
+        "format": " 󰎆  ",
+        "on-click": "$HOME/bin/audio-song",
+        },
 }
 

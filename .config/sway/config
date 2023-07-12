@@ -20,6 +20,7 @@ exec_always --no-startup-id swaybg -m fill -i $HOME/.config/wall.png &
 
 #Authentication dialog (polkit-gnome)
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
 exec_always --no-startup-id $HOME/.config/sway/waybar.sh &
 # exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
@@ -263,7 +264,7 @@ mode "resize" {
 #####################################################################################################################
 
 # bindsym $mod+Return exec alacritty;focus
-bindsym $mod+Return exec foot;focus
+bindsym $mod+Return exec foot
 # bindsym Ctrl+Return exec alacritty;focus
 bindsym $mod+period exec killall rofi || rofi -modi emoji -show emoji
 
@@ -424,18 +425,18 @@ mode "$mode_gaps_outer" {
 
 #################################################### blur ##########################################################
  
-blur enable
-shadows enable
-corner_radius 12
-scratchpad_minimize enable
-titlebar_separator enable
+# blur enable
+# shadows enable
+# corner_radius 12
+# scratchpad_minimize enable
+# titlebar_separator enable
 
 # layer_effects "waybar" blur enable; shadows enable; corner_radius 0
 
 ########################### assigne ###################################
-for_window [class="firefox"] move to workspace 2
-for_window [class="Google-chrome"] move to workspace 2
-for_window [class="Brave"] move to workspace 2
+# for_window [class="firefox"] move to workspace 2
+# for_window [class="Google-chrome"] move to workspace 2
+# for_window [class="Brave"] move to workspace 2
 # for_window [class="Emacs"] move to workspace 3
 
 ############ Rule #####################

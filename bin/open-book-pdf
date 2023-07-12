@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#FIND="fd"
+FIND="fdfind"
 DMENU='dmenu -i -F -l 15 -p'
 FZF='fzf --height 70% --border rounded --reverse --prompt'
 ROFI='rofi -dmenu -i -theme ~/.config/rofi/full-theme.rasi -p'
@@ -10,7 +12,7 @@ NOTE=/mnt/docs/notes
 
 
 main() {
-    choose=$(fd . $BOOK $PROJ $NOTE -e pdf -e djvu | $MENU "Book Name > " )
+    choose=$($FIND . $BOOK $PROJ $NOTE -e pdf -e djvu | $MENU "Book Name > " )
     if [ "$choose" == "" ]
     then
 	exit
@@ -28,7 +30,7 @@ help() {
 
 if [ $1 == '-d' ]
 then
-  MENU=$DMENU
+  MENU=$ROFI
   main
 elif [ $1 == '-f' ]
 then
@@ -38,6 +40,6 @@ elif [ $1 == '-h' ]
 then
   help
 else
-  MENU=$ROFI
+  MENU=$DMENU
   main
 fi

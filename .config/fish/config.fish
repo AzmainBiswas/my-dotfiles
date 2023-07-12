@@ -61,7 +61,7 @@ abbr movies "cd /mnt/media/video/movies/"
 abbr vsong "cd /mnt/media/video/songs/"
 abbr ocf "cd /mnt/docs/codding-and-programming/"
 abbr tx "TERM=xterm-256color tmux"
-abbr sd "cd (fd . --type directory | fzf --height 50% --layout=reverse --border )"
+abbr sd "cd (fdfind . --type directory | fzf --height 50% --layout=reverse --border )"
 
 alias cls clear
 alias .. "cd .."
