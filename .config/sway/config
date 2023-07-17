@@ -265,10 +265,8 @@ mode "resize" {
 
 # bindsym $mod+Return exec alacritty;focus
 bindsym $mod+Return exec foot
-# bindsym Ctrl+Return exec alacritty;focus
-bindsym $mod+period exec killall rofi || rofi -modi emoji -show emoji
-
-bindsym control+mod1+u exec --no-startup-id pavucontrol
+bindsym Ctrl+Return exec alacritty
+bindsym $mod+period exec killall rofi || $HOME/bin/emoji
 
 #####################################################################################################################
 #################                          screenshots                                              #################

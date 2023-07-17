@@ -1,6 +1,6 @@
 /* @import "mocha.css"; */
 
-@define-color bg    rgba(29, 32, 33, 0.8);
+@define-color bg    rgba(29, 32, 33, 1);
 @define-color bg2   #504945;
 @define-color text  #d5c4a1;
 @define-color lavender  #83a698;

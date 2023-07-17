@@ -1,7 +1,7 @@
 # Default config for imv
 
 [options]
-background = #000000
+background = #1d2021
 overlay_font = RobotoMono Nerd Font Mono:15
 # Suppress built-in key bindings, and specify them explicitly in this
 # config file.

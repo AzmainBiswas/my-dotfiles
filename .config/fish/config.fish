@@ -4,8 +4,8 @@ end
 
 set -U fish_greeting ""
 
-# starship init fish | source
-oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
+starship init fish | source
+# oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
 thefuck --alias | source
 theme_gruvbox dark hard
 
@@ -68,8 +68,8 @@ alias .. "cd .."
 alias ls "exa -aF --icons --color=always --group-directories-first"
 alias ll "exa -alF --icons --color=always --group-directories-first"
 alias tree "exa -F --icons --color=always --tree"
-alias nv nvim
 alias vim nvim
+alias nivm nvim
 alias v nvim
 alias book "cd /mnt/docs/Book"
 alias music "cd /mnt/media/Music"
@@ -81,6 +81,33 @@ alias merge 'xrdb -merge ~/.Xresources'
 
 
 # Functions
+
+# chande diractory
+function sd
+    cd (fdfind . --type directory | fzf )
+end
+function rd
+    cd (z --list | awk '{ print $NF }' | fzf )
+end
+
+# neovim stuff
+function ovc
+    cd $HOME/.config/nvim/
+    nvim .
+end
+
+function odf
+    set -l dotfiledir "$HOME/.dotfiles/"
+    set -l dir (fdfind . $dotfiledir -t d --hidden | fzf)
+    if [ "$dir" = "" ]
+        echo "choose directory"
+    else if [ "$dir" = " " ]
+        echo "choose directory"
+    else
+        cd $dir
+        nvim .
+    end
+end
 
 # rga with fzf
 function rga-fzf
@@ -101,4 +128,3 @@ function rga-fzf
 end
 
 # neofetch
-# colorscript random

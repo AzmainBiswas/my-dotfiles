@@ -55,7 +55,6 @@ alias movies="cd /mnt/media/video/movies/"
 alias vsong="cd /mnt/media/video/songs/"
 alias ocf="cd /mnt/docs/codding-and-programming/"
 alias tx="TERM=xterm-256color tmux"
-alias sd="cd (fd . --type directory | fzf --height 50% --layout=reverse --border )"
 
 alias cls="clear"
 alias ..="cd .."
@@ -86,6 +85,10 @@ rga-fzf() {
 	)" &&
 	echo "opening $file" &&
 	xdg-open "$file"
+}
+
+sd() {
+    cd $(fdfind . --type  directory | fzf)
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
