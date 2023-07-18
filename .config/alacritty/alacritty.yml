@@ -1,5 +1,13 @@
-import:
-  - /home/azmain/.config/alacritty/themes/gruvbox_bark.yaml
+# import:
+#   - /home/azmain/.config/alacritty/themes/gruvbox_bark.yaml
+
+colors:
+  primary:
+    background: '#000000'
+    foreground: '#ffffff'
+  cursor:
+    test: '#000000'
+    cursor: '#ffffff'
 
 window:
   padding:
@@ -15,7 +23,7 @@ window:
   dimensions:
     columns: 150
     lines: 35
-  opacity: 1.0
+  opacity: 0.9
   decorations: full
 scrolling:
   history: 50000

@@ -7,7 +7,7 @@ set -U fish_greeting ""
 starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
 thefuck --alias | source
-theme_gruvbox dark hard
+# theme_gruvbox dark hard
 
 # Envioment variables
 # flameshot 

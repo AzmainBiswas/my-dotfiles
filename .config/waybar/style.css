@@ -1,14 +1,14 @@
 /* @import "mocha.css"; */
 
-@define-color bg    rgba(29, 32, 33, 1);
-@define-color bg2   #504945;
-@define-color text  #d5c4a1;
+@define-color bg    rgba(0, 0, 0, 0.8);
+@define-color bg2   #000000;
+@define-color text  #ffffff;
 @define-color lavender  #83a698;
 @define-color orange    #fe8019;
 @define-color purple    #d3869b;
 @define-color red   #fb4934;
 @define-color green #b8bb26;
-@define-color aqua  #8ec07c;
+@define-color aqua  #ffffff;
 
 * {
     font-family:  RobotoMono Nerd Font;
@@ -24,6 +24,15 @@ window#waybar {
     /* border-bottom: 2px solid @aqua; */
     /* transition-property: background-color; */
     /* transition-duration: .5s; */
+}
+
+button {
+    /* Avoid rounded borders under each button name */
+    padding: 0 0 0 0px;
+    border: none;
+    border-radius: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
 }
 
 /* Workspace Buttons */
@@ -111,7 +120,7 @@ window#waybar {
 
 #backlight {
     padding: 5px 5px;
-    color: @aqua;
+    color: @purple;
 }
 
 #battery {

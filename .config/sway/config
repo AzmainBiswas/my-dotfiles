@@ -294,8 +294,8 @@ bindsym Ctrl+Shift+j exec mpc prev && dunstify "Playing" "$(mpc current)"
 #####################################################################################################################
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 20+
-bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 20-
+bindsym XF86MonBrightnessUp exec brightnessctl set 20+
+bindsym XF86MonBrightnessDown exec brightnessctl set 19-
 
 bindsym $mod+End exec --no-startup-id $HOME/bin/yt-music.sh 
 bindsym End exec --no-startup-id $HOME/bin/audio-song
