@@ -36,6 +36,10 @@ button {
 }
 
 /* Workspace Buttons */
+#workspaces button {
+    padding-left: 0;
+    padding-right: 0;
+}
 #workspaces button label{
     color: @aqua;
 }

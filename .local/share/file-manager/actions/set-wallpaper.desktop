@@ -7,4 +7,4 @@ Profiles=profile-wallpaper;
 [X-Action-Profile profile-wallpaper]
 MimeTypes=image/png;image/jpg;image/jpeg
 Name[en]=Default profile
-Exec=set-wall.sh %f
+Exec=/home/azmain/bin/set-wall.sh %f

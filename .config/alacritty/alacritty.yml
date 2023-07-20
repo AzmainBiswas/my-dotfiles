@@ -34,16 +34,16 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: CaskaydiaCove Nerd Font
+    family: ComicShannsMono Nerd Font
     style: Regular
   bold:
-    family: CaskaydiaCove Nerd Font
+    family: ComicShannsMono Nerd Font
     style: Bold
   italic:
-    family: CaskaydiaCove Nerd Font
+    family: ComicShannsMono Nerd Font
     style: Italic
   bold_italic:
-    family: CaskaydiaCove Nerd Font 
+    family: ComicShannsMono Nerd Font 
     style: Bold Italic
 
   # Point size

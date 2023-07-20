@@ -20,7 +20,7 @@ def Choose_wall():
 if __name__ == "__main__":
     wallpaper = Choose_wall()
     fullpath = os.path.join(WallPath, wallpaper)
-    os.system(f'cp -f "{fullpath}" $HOME/.config/wall.png')
+    os.system(f'cp -f "{fullpath}" $HOME/.config/background')
 
     # set wallaper
-    os.system("killall swaybg && swaybg -m fill -i $HOME/.config/wall.png &")
+    os.system("killall swaybg && swaybg -m fill -i $HOME/.config/background &")

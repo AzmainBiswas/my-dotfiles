@@ -6,6 +6,7 @@
 # eval "$(oh-my-posh init bash --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json)"
 # eval $(thefuck --alias)
 
+export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$HOME/.cargo/bin:$PATH
 
 alias ls='exa -aF --icons'
 alias ll='exa -alF --icons'

@@ -4,4 +4,4 @@
 FIND="fdfind"
 ALL="/mnt/media/video/songs/"
 
-mpv $($FIND . ${ALL} -e mpv -e mp3 -e webm | rofi -dmenu -matching "fuzzy" -p "Videos" -theme ~/.config/rofi/full-theme.rasi)
+mpv $($FIND . ${ALL} -e mkv -e mp4 -e webm | rofi -dmenu -matching "fuzzy" -p "Videos" )
