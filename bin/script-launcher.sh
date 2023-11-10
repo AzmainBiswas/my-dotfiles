@@ -16,5 +16,5 @@ main() {
     exec $script
 }
 
-MENU=$DMENU
+MENU=$ROFI
 main

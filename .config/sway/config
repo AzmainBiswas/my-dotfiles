@@ -114,7 +114,7 @@ bindsym $mod+d exec killall rofi || rofi -show drun
 # bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+Shift+d exec killall dmenu || dmenu_run -F -p "Launcher > " -l 14
 bindsym $mod+w exec killall rofi || rofi -show window
-bindsym $mod+v exec killall rofi || $HOME/bin/clip-rofi
+bindsym $mod+v exec clipmenu
 bindsym $mod+s exec $HOME/bin/script-launcher.sh
 
 #####################################################################################################################
