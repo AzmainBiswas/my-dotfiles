@@ -37,6 +37,17 @@ abbr aur pikaur
 abbr pi "sudo pacman -Syu"
 abbr pr "sudo pacman -Rs"
 
+# Debian Linux
+abbr nala "sudo nala"
+abbr apt "sudo apt"
+abbr nup "sudo nala upgrade"
+abbr aup "sudo apt update && sudo apt upgrade"
+abbr nin "sudo nala install"
+abbr ain "sudo apt install"
+abbr arm "sudo apt remove"
+abbr nrm "sudo nala remove"
+abbr atr "sudo apt autoremove"
+
 # Fedora Linux
 abbr du "sudo dnf upgrade"
 abbr di "sudo dnf install"
@@ -126,4 +137,4 @@ function rga-fzf
     ) && echo "opening $file" && open "$file"
 end
 
-# neofetch
+neofetch
