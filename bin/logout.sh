@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-swaylock -e -i $HOME/.config/wall.png &
+swaylock -e -i $HOME/.config/background &
 sleep 2
 systemctl suspend
