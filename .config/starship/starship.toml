@@ -1,7 +1,8 @@
 format = """
 $os\
 $directory\
-$character"""
+$character
+"""
 
 right_format = """
 $shell\
@@ -30,6 +31,7 @@ $battery\
 """
 
 [character]
+success_symbol = '[➜](bold green) '
 error_symbol = '[✗ ](bold red) '
 
 [shell]
@@ -44,8 +46,7 @@ symbol = " "
 [directory]
 read_only = " 󰌾"
 truncation_length = 2
-truncation_symbol = '…/'
-format = ' [$path]($style)[$read_only]($read_only_style) '
+format = ' [\($path\)]($style)[$read_only]($read_only_style) '
 
 [battery]
 full_symbol = '  '
