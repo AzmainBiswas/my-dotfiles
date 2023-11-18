@@ -20,6 +20,7 @@ set -x TERM alacritty
 set -x EDITOR nvim
 set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
+# set -x FZF_DEFAULT_OPTS ''
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 # set -x CM_LAUNCHER 'rofi'
 
@@ -137,4 +138,6 @@ function rga-fzf
     ) && echo "opening $file" && open "$file"
 end
 
-neofetch
+# neofetch
+# colorscript -r
+colorscript -e debian

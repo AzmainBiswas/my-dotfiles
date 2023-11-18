@@ -14,6 +14,6 @@ map i recolor
 map p print
 set selection-clipboard clipboard
 
-set recolor                     "true"
+# set recolor                     "true"
 # set recolor-keephue             true      # keep original color
 include color

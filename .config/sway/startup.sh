@@ -5,8 +5,9 @@ nm-applet --indicator &
 # syncthingtray --wait &
 blueman-applet &
 xfce4-power-manager &
-dunst &
-mpd &
+# dunst &
+swaync &
+mswayncpd &
 # clipmenud &
 wl-clipboard-history -t &
 # copyq &
