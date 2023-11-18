@@ -1,22 +1,22 @@
 /* @import "mocha.css"; */
 
-@define-color bg    rgba(0, 0, 0, 0.8);
-@define-color bg2   #000000;
-@define-color text  #ffffff;
-@define-color lavender  #83a698;
-@define-color orange    #fe8019;
-@define-color purple    #d3869b;
-@define-color red   #fb4934;
+@define-color bg rgba(0, 0, 0, 1);
+@define-color bg2 #000000;
+@define-color text #ffffff;
+@define-color lavender #83a698;
+@define-color orange #fe8019;
+@define-color purple #d3869b;
+@define-color red #fb4934;
 @define-color green #b8bb26;
-@define-color aqua  #ffffff;
+@define-color aqua #ffffff;
 
 * {
-    font-family:  RobotoMono Nerd Font;
+    font-family: RobotoMono Nerd Font;
     font-weight: bold;
     font-size: 16px;
     color: @text;
 }
-  
+
 window#waybar {
     border-bottom-style: inset;
     background-color: @bg;
@@ -28,7 +28,7 @@ window#waybar {
 
 button {
     /* Avoid rounded borders under each button name */
-    padding: 0 0 0 0px;
+    padding: 0 1 1 0px;
     border: none;
     border-radius: 0px;
     padding-left: 0px;
@@ -40,14 +40,17 @@ button {
     padding-left: 0;
     padding-right: 0;
 }
-#workspaces button label{
+
+#workspaces button label {
     color: @aqua;
 }
+
 #workspaces button.focused label {
     color: @bg;
 }
+
 #workspaces button.focused {
-    background: @aqua; 
+    background: @aqua;
 }
 
 #workspaces button.urgent {
@@ -79,8 +82,7 @@ button {
 #rofi,
 #custom-wallpaper,
 #custom-logout,
-#custom-notification
-#window,
+#custom-notification #window,
 #workspaces {
     margin: 0 5px;
 }
@@ -95,7 +97,7 @@ button {
 }
 
 #scratchpad.empty {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #pulseaudio {
@@ -133,7 +135,8 @@ button {
     color: @lavender;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     padding: 5px 5px;
     color: @green;
 }
@@ -172,6 +175,6 @@ button {
     color: @aqua;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     background-color: @red;
 }

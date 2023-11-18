@@ -139,5 +139,3 @@ function rga-fzf
 end
 
 # neofetch
-# colorscript -r
-colorscript -e debian
