@@ -40,6 +40,7 @@
   "widgets": [
     "title",
     "dnd",
+    "mpris",
     "notifications"
   ],
   "widget-config": {

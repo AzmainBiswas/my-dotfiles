@@ -272,8 +272,8 @@ bindsym $mod+period exec killall rofi || $HOME/bin/emoji
 #################                          screenshots                                              #################
 #####################################################################################################################
 
-bindsym Print exec grim $HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png
-bindsym $mod+Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png
+bindsym Print exec grim $HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png && notify-send "Screenshot Path" "$HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png"
+bindsym $mod+Print exec grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png && notify-send "Screenshot Path" "$HOME/Pictures/Screenshots/$(date +%d-%m-%y-%H-%M-%S).png"
 
 #####################################################################################################################
 #################                          audio settings                                           #################
