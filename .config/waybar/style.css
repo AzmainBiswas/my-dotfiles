@@ -1,6 +1,6 @@
 /* @import "mocha.css"; */
 
-@define-color bg rgba(0, 0, 0, 1);
+@define-color bg rgba(22, 22, 25, 0.9);
 @define-color bg2 #000000;
 @define-color text #ffffff;
 @define-color lavender #83a698;
@@ -11,57 +11,57 @@
 @define-color aqua #ffffff;
 
 * {
-    font-family: RobotoMono Nerd Font;
-    font-weight: bold;
-    font-size: 16px;
-    color: @text;
+  font-family: RobotoMono Nerd Font;
+  font-weight: bold;
+  font-size: 16px;
+  color: @text;
 }
 
 window#waybar {
-    border-bottom-style: inset;
-    background-color: @bg;
-    border-top: 2px solid @aqua;
-    /* border-bottom: 2px solid @aqua; */
-    /* transition-property: background-color; */
-    /* transition-duration: .5s; */
+  border-bottom-style: inset;
+  background-color: @bg;
+  border-top: 2px solid @aqua;
+  /* border-bottom: 2px solid @aqua; */
+  /* transition-property: background-color; */
+  /* transition-duration: .5s; */
 }
 
 button {
-    /* Avoid rounded borders under each button name */
-    padding: 0 1 1 0px;
-    border: none;
-    border-radius: 0px;
-    padding-left: 0px;
-    padding-right: 0px;
+  /* Avoid rounded borders under each button name */
+  padding: 0 1 1 0px;
+  border: none;
+  border-radius: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 
 /* Workspace Buttons */
 #workspaces button {
-    padding-left: 0;
-    padding-right: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 #workspaces button label {
-    color: @aqua;
+  color: @aqua;
 }
 
 #workspaces button.focused label {
-    color: @bg;
+  color: @bg;
 }
 
 #workspaces button.focused {
-    background: @aqua;
+  background: @aqua;
 }
 
 #workspaces button.urgent {
-    background-color: @red;
+  background-color: @red;
 }
 
 #mode {
-    padding: 5px 5px;
-    background-color: @bg2;
-    border-bottom: 2px solid @aqua;
-    border-top: 2px solid @aqua;
+  padding: 5px 5px;
+  background-color: @bg2;
+  border-bottom: 2px solid @aqua;
+  border-top: 2px solid @aqua;
 }
 
 #clock,
@@ -84,97 +84,97 @@ button {
 #custom-logout,
 #custom-notification #window,
 #workspaces {
-    margin: 0 5px;
+  margin: 0 5px;
 }
 
 #rofi {
-    padding: 5px;
+  padding: 5px;
 }
 
 #scratchpad {
-    padding: 0 3px;
-    color: @aqua;
+  padding: 0 3px;
+  color: @aqua;
 }
 
 #scratchpad.empty {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 #pulseaudio {
-    padding: 5px 5px;
-    color: @lavender;
+  padding: 5px 5px;
+  color: @lavender;
 }
 
 #pulseaudio.muted {
-    padding: 5px 5px;
-    color: @red;
+  padding: 5px 5px;
+  color: @red;
 }
 
 #network {
-    padding: 5px 5px;
-    color: @green;
+  padding: 5px 5px;
+  color: @green;
 }
 
 #network.disconnected {
-    padding: 5px 5px;
-    color: @red;
+  padding: 5px 5px;
+  color: @red;
 }
 
 #memory {
-    padding: 5px 5px;
-    color: @lavender;
+  padding: 5px 5px;
+  color: @lavender;
 }
 
 #backlight {
-    padding: 5px 5px;
-    color: @purple;
+  padding: 5px 5px;
+  color: @purple;
 }
 
 #battery {
-    padding: 5px 5px;
-    color: @lavender;
+  padding: 5px 5px;
+  color: @lavender;
 }
 
 #battery.charging,
 #battery.plugged {
-    padding: 5px 5px;
-    color: @green;
+  padding: 5px 5px;
+  color: @green;
 }
 
 @keyframes blink {
-    to {
-        background-color: @surface2;
-        color: @rad;
-    }
+  to {
+    background-color: @surface2;
+    color: @rad;
+  }
 }
 
 #battery.critical:not(.charging) {
-    padding: 5px 5px;
-    color: @red;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+  padding: 5px 5px;
+  color: @red;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
 }
 
 #clock {
-    padding: 5px 5px;
-    color: @purple;
+  padding: 5px 5px;
+  color: @purple;
 }
 
 #custom-wallpaper {
-    color: @aqua;
+  color: @aqua;
 }
 
 #custom-logout {
-    color: @lavender;
+  color: @lavender;
 }
 
 #custom-notification {
-    color: @aqua;
+  color: @aqua;
 }
 
 #tray>.needs-attention {
-    background-color: @red;
+  background-color: @red;
 }

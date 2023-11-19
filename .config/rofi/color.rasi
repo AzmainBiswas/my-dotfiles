@@ -1,10 +1,10 @@
 * {
-    bg-col:  #000000;
+    bg-col:  #161619;
     bg-col-light: #383838;
-    border-col: #000000;
+    border-col: #161619;
     selected-col: #ffffff;
     blue: #83a598;
-    fg-col: #ffffff;
+    fg-col: #cdd6f4;
     fg-col2: #000000;
     grey: #000000;
 

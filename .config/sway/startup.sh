@@ -7,12 +7,12 @@ blueman-applet &
 xfce4-power-manager &
 # dunst &
 swaync &
-mswayncpd &
+mpd &
 # clipmenud &
 wl-clipboard-history -t &
 # copyq &
 kdeconnect-indicator &
 xrdb -load .Xresources &
 foot --server &
-dunstify "hello $(whoami) wellcome" &
+dunstify "HELLO" "$(whoami) wellcome" &
 /usr/bin/emacs --daemon &

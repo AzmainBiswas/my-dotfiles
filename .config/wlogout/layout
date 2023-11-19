@@ -28,3 +28,9 @@
     "text" : "Suspend (u)",
     "keybind" : "u"
 }
+{
+    "label" : "sleep",
+    "action" : "$HOME/bin/logout.sh",
+    "text" : "sleep (p)",
+    "keybind" : "p"
+}
