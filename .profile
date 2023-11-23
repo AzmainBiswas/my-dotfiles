@@ -12,3 +12,5 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 export QT_QPA_PLATFORM=wayland
 export XDG_CURRENT_DESKTOP=sway
 export XDG_SESSION_DESKTOP=sway
+
+if [ -e /home/azmain/.nix-profile/etc/profile.d/nix.sh ]; then . /home/azmain/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

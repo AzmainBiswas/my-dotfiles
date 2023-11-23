@@ -92,3 +92,5 @@ sd() {
 }
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [ -e /home/azmain/.nix-profile/etc/profile.d/nix.sh ]; then . /home/azmain/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -9,13 +9,6 @@ starship init fish | source
 thefuck --alias | source
 
 # Envioment variables
-# flameshot 
-set -xU SDL_VIDEODRIVER wayland
-set -xU _JAVA_AWT_WM_NONREPARENTING 1
-set -xU QT_QPA_PLATFORM wayland
-set -xU XDG_CURRENT_DESKTOP sway
-set -xU XDG_SESSION_DESKTOP sway
-
 set -x TERM alacritty
 set -x EDITOR nvim
 set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
@@ -23,6 +16,7 @@ set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 # set -x FZF_DEFAULT_OPTS ''
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 # set -x CM_LAUNCHER 'rofi'
+set -x PF_INFO 'ascii title os kernel shell uptime palette'
 
 # Fzf settings
 set -Ua FZF_COMPLETE 3
@@ -72,7 +66,6 @@ abbr movies "cd /mnt/media/video/movies/"
 abbr vsong "cd /mnt/media/video/songs/"
 abbr ocf "cd /mnt/docs/codding-and-programming/"
 abbr tx "TERM=xterm-256color tmux"
-abbr sd "cd (fdfind . --type directory | fzf --height 50% --layout=reverse --border )"
 
 alias cls clear
 alias .. "cd .."
@@ -139,3 +132,4 @@ function rga-fzf
 end
 
 # neofetch
+# pfetch
