@@ -447,8 +447,8 @@ no_focus   [window_type="splash"]
 for_window [tiling] border pixel $borderpx
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Shadow"] fullscreen enable
-for_window [window_role="PictureInPicture"] floating enable
-for_window [class="Pavucontrol"] floating enable
+for_window [app_id="Pavucontrol"] floating enable
+for_window [title="Picture in picture" ] floating enable
 
 # Zoom (😱?)
 # For pop up notification windows that don't use notifications api
@@ -459,3 +459,5 @@ for_window [app_id="zoom" title="Settings"] floating enable, floating_minimum_si
 # Open Zoom Meeting windows on a new workspace (a bit hacky)
 for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --create, move container to workspace current, floating disable, inhibit_idle open
 
+#### Opacity ####
+for_window [class="Code"] opacity 0.95

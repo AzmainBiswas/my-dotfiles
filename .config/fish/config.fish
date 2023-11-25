@@ -12,8 +12,8 @@ thefuck --alias | source
 set -x TERM xterm-256color
 set -x EDITOR nvim
 set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
-set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
-# set -x FZF_DEFAULT_OPTS ''
+# set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
+set -x FZF_DEFAULT_OPTS ''
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 # set -x CM_LAUNCHER 'rofi'
 set -x PF_INFO 'ascii title os kernel shell uptime palette'
