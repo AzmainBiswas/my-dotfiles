@@ -9,7 +9,7 @@ starship init fish | source
 thefuck --alias | source
 
 # Envioment variables
-set -x TERM alacritty
+set -x TERM xterm-256color
 set -x EDITOR nvim
 set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
 set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
@@ -133,3 +133,4 @@ end
 
 # neofetch
 # pfetch
+fish_vi_key_bindings
