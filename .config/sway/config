@@ -263,7 +263,7 @@ mode "resize" {
 
 # bindsym $mod+Return exec alacritty;focus
 bindsym $mod+Return exec foot
-bindsym Ctrl+Return exec alacritty
+bindsym Ctrl+Return exec kitty
 bindsym $mod+period exec killall rofi || $HOME/bin/emoji
 bindsym $mod+v exec clipmenu
 bindsym $mod+s exec $HOME/bin/script-launcher.sh
@@ -460,4 +460,4 @@ for_window [app_id="zoom" title="Settings"] floating enable, floating_minimum_si
 for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --create, move container to workspace current, floating disable, inhibit_idle open
 
 #### Opacity ####
-for_window [class="Code"] opacity 0.95
+# for_window [class="Code"] opacity 0.95

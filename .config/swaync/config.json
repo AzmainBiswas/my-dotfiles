@@ -32,7 +32,7 @@
   },
   "notification-visibility": {
     "example-name": {
-      "state": "unmuted",
+      "state": "muted",
       "urgency": "Low",
       "app-name": "Spotify"
     }

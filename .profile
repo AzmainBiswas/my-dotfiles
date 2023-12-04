@@ -1,6 +1,6 @@
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$HOME/.cargo/bin:$PATH
 export EDITOR=nvim
-export TERM="xterm-256color"
+export TERM=screen-256color
 export FZF_DEFAULT_OPTS='--height 70% --layout=reverse --border'
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export media=/mnt/media
