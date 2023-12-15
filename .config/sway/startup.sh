@@ -8,11 +8,9 @@ xfce4-power-manager &
 # dunst &
 swaync &
 mpd &
-# clipmenud &
-wl-clipboard-history -t &
-# copyq &
 kdeconnect-indicator &
+wl-paste --watch cliphist store &
 xrdb -load .Xresources &
 foot --server &
 dunstify "HELLO" "$(whoami) wellcome" &
-/usr/bin/emacs --daemon &
+# /usr/bin/emacs --daemon &
