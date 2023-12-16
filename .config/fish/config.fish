@@ -4,13 +4,13 @@ end
 
 set -U fish_greeting ""
 
-starship init fish | source
+# starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
 thefuck --alias | source
 
 # Envioment variables
 set -x EDITOR nvim
-set -x MANPAGER "sh -c 'col -bx | batcat -l man -p'"
+set -x MANPAGER "less"
 # set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x FZF_DEFAULT_OPTS ''
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'

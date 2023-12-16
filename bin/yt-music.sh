@@ -1,24 +1,24 @@
 #!/usr/bin/env bash
 
-YT_CLINT="https://vid.puffyan.us"
-
-quary_usr=$(rofi -dmenu -p "YT Quary" | tr ' ' '+')
+quary_usr=$(printf "" | dmenu -i -F -p "yt-music: ")
 
 if [ "$quary_usr" = "" ]
 then
     exit
 fi
 
-quary=$(echo "song+audio+${quary_usr}")
-video_id=$(curl --silent "https://vid.puffyan.us/search?q=${quary}" | rg -o "watch\?v=.{11}" | head -n 1)
-video_url="https://www.youtube.com/${video_id}"
-audio_url=$(yt-dlp -f ba --get-url ${video_url})
+quary=$(echo "${quary_usr} original song audio")
+audio_url=$(yt-dlp -f ba --get-url "ytsearch:${quary}" )
+thumbnal_url=$(yt-dlp --get-thumbnail "ytsearch:${quary}")
+
+wget -c ${thumbnal_url} -O /home/azmain/.local/.temp/thumbnal.png
 
 mpc stop
 mpc clear
 mpc add ${audio_url}
 mpc play
+mpc repeat
 
 # notification
-title=$(yt-dlp --get-title ${video_url})
-notify-send "playing: " "${title}"
+notify-send -i /home/azmain/.local/.temp/thumbnal.png "Playing:  ${quary_usr}"
+rm /home/azmain/.local/.temp/thumbnal.png

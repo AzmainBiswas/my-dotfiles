@@ -8,6 +8,7 @@ xfce4-power-manager &
 # dunst &
 swaync &
 mpd &
+lxpolkit &
 kdeconnect-indicator &
 wl-paste --watch cliphist store &
 xrdb -load .Xresources &
