@@ -24,3 +24,4 @@ if __name__ == "__main__":
 
     # set wallaper
     os.system("killall swaybg && swaybg -m fill -i $HOME/.config/background &")
+    os.system('notify-send -i $HOME/.config/background "WallPaper set!!"')
