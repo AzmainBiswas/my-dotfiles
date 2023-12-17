@@ -23,4 +23,5 @@ set -U fzf_preview_dir_cmd exa --all --color=always
 set -U fzf_fd_opts --hidden --exclude=.git
 
 # paths
-set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $fish_user_path
+set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $HOME/miniconda3/bin $fish_user_path
+
