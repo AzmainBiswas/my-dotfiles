@@ -14,16 +14,16 @@ LANG=$(printf "ALL\nBengali\nEnglish\nHindi" | ${MENU} "Sclect Language > ")
 
 case "${LANG}" in
     Bengali)
-	mpv --loop $($FIND . ${BENGALI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
+	mpv --fs --loop $($FIND . ${BENGALI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     English)
-	mpv --loop $($FIND . ${ENGLISH} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
+	mpv --fs --loop $($FIND . ${ENGLISH} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     Hindi)
-	mpv --loop $($FIND . ${HINDI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
+	mpv --fs --loop $($FIND . ${HINDI} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     ALL)
-	mpv --loop $($FIND . ${ALL} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
+	mpv --fs --loop $($FIND . ${ALL} -e webm -e mp4 -e mkv | ${MENU} "Sclect Video > ")
 	;;
     *)
 	printf "You choice in invalide. Run the script again" | ${MENU}
