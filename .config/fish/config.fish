@@ -9,6 +9,7 @@ set -U fish_greeting ""
 thefuck --alias | source
 
 # Envioment variables
+set -x TERM "screen-256color"
 set -x EDITOR nvim
 set -x MANPAGER "less"
 # set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
