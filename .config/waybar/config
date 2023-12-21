@@ -27,8 +27,9 @@
     ],
     // Modules configuration
     "sway/workspaces": {
-        "disable-scroll": false,
+        "disable-scroll": true,
         "all-outputs": true,
+        "warp-on-scroll": false,
         //"format": "{name}: {icon}",
         "format": "{name}",
         "format-icons": {
@@ -61,7 +62,8 @@
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d-%B-%y %I:%M %p}"
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%a %d-%B-%y %I:%M %p}"
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
