@@ -2,6 +2,7 @@
 
 import os
 import random
+import notify2
 
 WallPath = "/mnt/media/wallpapers"
 
@@ -24,4 +25,10 @@ if __name__ == "__main__":
 
     # set wallaper
     os.system("killall swaybg && swaybg -m fill -i $HOME/.config/background &")
-    os.system('notify-send -i $HOME/.config/background "WallPaper set!!"')
+
+    # send notifucation
+    notify2.init("Wallpaper")
+    notification = notify2.Notification("Wallpaper Set!!", f"Wallpaper has been set to \n{fullpath}", fullpath)
+    notification.set_urgency(notify2.URGENCY_NORMAL)
+    notification.set_timeout(5000)
+    notification.show()
