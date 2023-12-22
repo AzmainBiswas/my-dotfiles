@@ -1,13 +1,14 @@
-# import:
-#   - /home/azmain/.config/alacritty/themes/gruvbox_bark.yaml
+import:
+  - /home/azmain/.config/alacritty/themes/catppuccin-mocha.yml
 
-colors:
-  primary:
-    background: '#000000'
-    foreground: '#ffffff'
-  cursor:
-    test: '#000000'
-    cursor: '#ffffff'
+    # colors:
+    #   primary:
+    #     background: '#000000'
+    #     foreground: '#ffffff'
+    #   cursor:
+    #     test: '#000000'
+    #     cursor: '#ffffff'
+    # 
 
 window:
   padding:

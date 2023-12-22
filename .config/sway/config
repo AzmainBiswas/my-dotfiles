@@ -262,8 +262,8 @@ mode "resize" {
 #####################################################################################################################
 
 # bindsym $mod+Return exec alacritty;focus
-bindsym $mod+Return exec foot
-bindsym Ctrl+Return exec kitty
+bindsym $mod+Return exec alacritty
+bindsym Ctrl+Return exec foot
 bindsym $mod+period exec killall rofi || $HOME/bin/emoji
 bindsym $mod+v exec rofi -modi clipboard:/home/azmain/.config/rofi/scripts/cliphist-rofi -show clipboard
 bindsym $mod+s exec $HOME/bin/script-launcher.sh
@@ -461,7 +461,7 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 
 #### Opacity ####
 # for_window [class="Code"] opacity 0.95
-for_window [class="Pcmanfm"] opacity 0.85
+# for_window [class="Pcmanfm"] opacity 0.85
 
 
 
