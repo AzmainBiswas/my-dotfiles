@@ -12,7 +12,7 @@
         "sway/scratchpad",
         "sway/window"
     ],
-    // "modules-center": [  ],
+    // "modules-center": ["sway/window"],
     "modules-right": [
         "pulseaudio",
         "network",
@@ -20,7 +20,6 @@
         "backlight",
         "battery",
         "clock",
-        "keyboard-state",
         "custom/notification",
         "custom/wallpaper",
         "custom/logout",
@@ -47,6 +46,17 @@
             "focused": "",
             "default": "",
         }
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "all-outputs": true,
+        "offscreen-css": true,
+        "offscreen-css-text": "(inactive)",
+        "rewrite": {
+            "(.*) - Mozilla Firefox": " $1",
+            "(.*) - fish": "> [$1]"
+        },
     },
     "sway/mode": {
         "format": "<span style=\"oblique\">{}</span>"
@@ -143,7 +153,7 @@
         "capslock": true,
         "format": {
             "numlock": "N {icon}",
-            "capslock": "C {icon}"                                                                                                                                                       
+            "capslock": "C {icon}"
         },
         "format-icons": {
             "locked": "",
