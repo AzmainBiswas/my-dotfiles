@@ -1,5 +1,6 @@
 function fish_prompt --description 'Write out the prompt'
     set -l last_status $status
+    set -g fish_prompt_pwd_dir_length 0
 
     # prompt_login
 
@@ -8,7 +9,6 @@ function fish_prompt --description 'Write out the prompt'
     # PWD
     set_color $fish_color_cwd
     echo -n " $(prompt_pwd) "
-    set -g fish_prompt_pwd_dir_length 0
     set_color normal
 
     set -q __fish_git_prompt_showdirtystate
