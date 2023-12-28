@@ -9,6 +9,7 @@ set -U fish_greeting ""
 thefuck --alias | source
 
 # Envioment variables
+set -g fish_prompt_pwd_dir_length 0
 set -x TERM "xterm-256color"
 set -x EDITOR nvim
 set -x MANPAGER "less"
@@ -25,4 +26,7 @@ set -U fzf_fd_opts --hidden --exclude=.git
 
 # paths
 set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $HOME/miniconda3/bin $fish_user_path
+
+# ABBR
+abbr code codium
 
