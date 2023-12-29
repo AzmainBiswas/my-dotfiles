@@ -18,6 +18,7 @@
         "network",
         //"memory",
         "backlight",
+        // "backlight/slider",
         "battery",
         "clock",
         "custom/notification",
@@ -92,6 +93,12 @@
             "",
             ""
         ]
+    },
+    "backlight/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal",
+        "device": "intel_backlight"
     },
     "battery": {
         "states": {

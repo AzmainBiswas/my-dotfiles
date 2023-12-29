@@ -398,34 +398,6 @@ mode "$mode_gaps_outer" {
         client.background        $base
 
     ##STOP THEMING WM
-
-#####################################################################################################################
-#################                          bar appearance                                           #################
-#####################################################################################################################
-
-#    bar {
-#        height 30
-#            position top
-#            font pango:FiraCode Nerd Font Propo 13
-#            status_command i3status
-#            tray_padding 0
-#            strip_workspace_numbers yes
-#
-#            colors {
-#                separator  #1f222d
-#                    background $base
-#                    statusline $mauve
-#
-##                   border  background text
-#                    focused_workspace  #1f222d #1f222d    #81a1c1
-#                    active_workspace   #1f222d #252936    #5e81ac
-#                    inactive_workspace #1f222d #1f222d    #4c566a
-#                    urgent_workspace   #1f222d #1f222d    #ee829f
-#                    binding_mode       #1f222d #81a1c1    #2e3440
-#            }
-#    }
-
-#################################################### blur ##########################################################
  
 # blur enable
 # shadows enable
@@ -476,3 +448,14 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 ##     gsettings set $gnome-schema font-name 'Cantarell 13'
 ##     gsettings set $gnome-schema cursor-size 35
 ## }
+
+#################### bindgester
+# Allow switching between workspaces with left and right swipes
+bindgesture swipe:right workspace prev
+bindgesture swipe:left workspace next
+
+# Allow container movements by pinching them
+bindgesture pinch:inward+up move up
+bindgesture pinch:inward+down move down
+bindgesture pinch:inward+left move left
+bindgesture pinch:inward+right move right
