@@ -1,3 +1,3 @@
 function sd
-    cd (fdfind . --type directory | fzf )
+    cd (fd . --type directory | fzf )
 end
