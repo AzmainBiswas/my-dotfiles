@@ -2,7 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-starship init fish | source
+# starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
 
 # Envioment variables
@@ -27,3 +27,4 @@ set -U fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local
 # ABBR
 abbr code codium
 
+#neofetch
