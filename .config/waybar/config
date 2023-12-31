@@ -8,6 +8,7 @@
     "modules-left": [
         "custom/rofi",
         "sway/workspaces",
+        "hyprland/window",
         "sway/mode",
         "sway/scratchpad",
         "sway/window"

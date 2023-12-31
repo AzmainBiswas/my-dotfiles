@@ -261,7 +261,6 @@ mode "resize" {
 #################                          applications keyboard shortcuts                          #################
 #####################################################################################################################
 
-# bindsym $mod+Return exec alacritty;focus
 bindsym $mod+Return exec foot
 bindsym Ctrl+Return exec alacritty
 bindsym $mod+period exec killall rofi || $HOME/bin/emoji
@@ -399,11 +398,11 @@ mode "$mode_gaps_outer" {
 
     ##STOP THEMING WM
  
-# blur enable
-# shadows enable
-# corner_radius 12
-# scratchpad_minimize enable
-# titlebar_separator enable
+## blur enable
+## shadows enable
+## corner_radius 12
+## scratchpad_minimize enable
+## titlebar_separator enable
 
 # layer_effects "waybar" blur enable; shadows enable; corner_radius 0
 
@@ -434,6 +433,7 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 #### Opacity ####
 # for_window [class="Code"] opacity 0.95
 # for_window [class="Pcmanfm"] opacity 0.85
+for_window [class="VSCodium"] opacity 0.85
 
 
 
@@ -441,15 +441,17 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 ################################### gtk-theme ###############################################
 ## set $gnome-schema org.gnome.desktop.interface
 ## 
-## exec_always {
+ exec_always {
 ##     gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 ##     gsettings set $gnome-schema icon-theme 'Tela-circle-black-dark'
 ##     gsettings set $gnome-schema cursor-theme 'macOS-Monterey-White'
 ##     gsettings set $gnome-schema font-name 'Cantarell 13'
-##     gsettings set $gnome-schema cursor-size 35
-## }
+     gsettings set $gnome-schema cursor-size 35
+ }
 
+######################################################
 #################### bindgester
+####################################################
 # Allow switching between workspaces with left and right swipes
 bindgesture swipe:right workspace prev
 bindgesture swipe:left workspace next
@@ -459,3 +461,9 @@ bindgesture pinch:inward+up move up
 bindgesture pinch:inward+down move down
 bindgesture pinch:inward+left move left
 bindgesture pinch:inward+right move right
+
+# mod + mouse will to change workspace
+bindsym --whole-window {
+    $mod+button4 workspace prev
+    $mod+button5 workspace next
+}

@@ -56,7 +56,7 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 0.4em;
+    padding: 0 0.2em;
     background-color: transparent;
     color: @white;
 }
