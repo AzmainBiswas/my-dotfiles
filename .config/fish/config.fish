@@ -6,7 +6,6 @@ set -U fish_greeting ""
 
 starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
-thefuck --alias | source
 
 # Envioment variables
 set -g fish_prompt_pwd_dir_length 0
