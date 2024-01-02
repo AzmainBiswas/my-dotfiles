@@ -1,5 +1,5 @@
 # my-dotfiles
-I am using sway in debian 12 righr now.
+I am using sway in ArcoLinux righr now.
 
 ## Previews
 

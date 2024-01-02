@@ -19,12 +19,11 @@ exec_always --no-startup-id swaybg -m fill -i $HOME/.config/background &
 #####################################################################################################################
 
 #Authentication dialog (polkit-gnome)
+exec_always --no-startup-id $HOME/.config/sway/waybar.sh &
+exec --no-startup-id $HOME/.config/sway/startup.sh &
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
-exec_always --no-startup-id $HOME/.config/sway/waybar.sh &
-# exec /usr/lib/xfce4/notifyd/xfce4-notifyd &
-exec --no-startup-id $HOME/.config/sway/startup.sh &
 
 
 #####################################################################################################################
