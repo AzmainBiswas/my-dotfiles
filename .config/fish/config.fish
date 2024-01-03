@@ -39,3 +39,7 @@ abbr code codium
 abbr spdl "spotdl --bitrate=320k" 
 abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
 
+## firefox 
+if [ "$XDG_SESSION_TYPE" = "wayland" ]
+    set -Ua MOZ_ENABLE_WAYLAND 1
+end
