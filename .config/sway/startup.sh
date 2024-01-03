@@ -13,5 +13,5 @@ kdeconnect-indicator &
 wl-paste --watch cliphist store &
 xrdb -load .Xresources &
 foot --server &
-dunstify "HELLO" "$(whoami) wellcome" &
+notify-send -i "$HOME/Pictures/azmain.jpg" "HELLO" "$(whoami) wellcome" &
 # /usr/bin/emacs --daemon &

@@ -14,7 +14,7 @@ login_url = "https://authentication.iiests.ac.in:8003/index.php?zone=hostelnetwo
 #     "accept": "Login"
 # }
 
-with open("/home/azmain/Documents/login_iiests.json") as j:
+with open("/home/azmain/Documents/loggin_iiests.json") as j:
     Payload = json.load(j)
 
     # post data
