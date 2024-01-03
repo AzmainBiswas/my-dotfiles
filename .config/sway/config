@@ -290,16 +290,16 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 ## MPD ##
 bindsym Ctrl+Shift+k exec mpc toggle
-bindsym Ctrl+Shift+l exec mpc next && dunstify "Playing" "$(mpc current)"
-bindsym Ctrl+Shift+j exec mpc prev && dunstify "Playing" "$(mpc current)"
+bindsym Ctrl+Shift+l exec mpc next && notify-send "Playing" "$(mpc current)"
+bindsym Ctrl+Shift+j exec mpc prev && notify-send "Playing" "$(mpc current)"
 
 ################################################################################################################
 #################                          light                                               #################
 ################################################################################################################
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec brightnessctl set 20+
-bindsym XF86MonBrightnessDown exec brightnessctl set 19-
+bindsym XF86MonBrightnessUp exec brightnessctl set 10+
+bindsym XF86MonBrightnessDown exec brightnessctl set 10-
 
 bindsym $mod+End exec --no-startup-id $HOME/bin/yt-music.sh 
 bindsym End exec --no-startup-id $HOME/bin/audio-song
@@ -399,31 +399,6 @@ mode "$mode_gaps_outer" {
 
     ##STOP THEMING WM
 
-#####################################################################################################################
-#################                          bar appearance                                           #################
-#####################################################################################################################
-
-#    bar {
-#        height 30
-#            position top
-#            font pango:FiraCode Nerd Font Propo 13
-#            status_command i3status
-#            tray_padding 0
-#            strip_workspace_numbers yes
-#
-#            colors {
-#                separator  #1f222d
-#                    background $base
-#                    statusline $mauve
-#
-##                   border  background text
-#                    focused_workspace  #1f222d #1f222d    #81a1c1
-#                    active_workspace   #1f222d #252936    #5e81ac
-#                    inactive_workspace #1f222d #1f222d    #4c566a
-#                    urgent_workspace   #1f222d #1f222d    #ee829f
-#                    binding_mode       #1f222d #81a1c1    #2e3440
-#            }
-#    }
 
 #################################################### blur ##########################################################
  
@@ -461,7 +436,7 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 
 #### Opacity ####
 # for_window [class="Code"] opacity 0.95
-# for_window [class="Pcmanfm"] opacity 0.85
+for_window [class="Pcmanfm"] opacity 0.85
 
 
 
@@ -469,10 +444,29 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 ################################### gtk-theme ###############################################
 ## set $gnome-schema org.gnome.desktop.interface
 ## 
-## exec_always {
+exec_always {
 ##     gsettings set $gnome-schema gtk-theme 'Adwaita-dark'
 ##     gsettings set $gnome-schema icon-theme 'Tela-circle-black-dark'
 ##     gsettings set $gnome-schema cursor-theme 'macOS-Monterey-White'
 ##     gsettings set $gnome-schema font-name 'Cantarell 13'
-##     gsettings set $gnome-schema cursor-size 35
-## }
+    gsettings set $gnome-schema cursor-size 35
+}
+
+######################################################
+#################### bindgester
+####################################################
+# Allow switching between workspaces with left and right swipes
+# bindgesture swipe:right workspace prev
+# bindgesture swipe:left workspace next
+
+# Allow container movements by pinching them
+# bindgesture pinch:inward+up move up
+# bindgesture pinch:inward+down move down
+# bindgesture pinch:inward+left move left
+# bindgesture pinch:inward+right move right
+
+# mod + mouse will to change workspace
+bindsym --whole-window {
+    $mod+button4 workspace prev
+    $mod+button5 workspace next
+}
