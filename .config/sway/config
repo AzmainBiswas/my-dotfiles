@@ -422,7 +422,7 @@ no_focus   [window_type="splash"]
 for_window [tiling] border pixel $borderpx
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Shadow"] fullscreen enable
-for_window [app_id="Pavucontrol"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 for_window [title="Picture in picture" ] floating enable
 
 # Zoom (😱?)
@@ -436,7 +436,7 @@ for_window [app_id="zoom" title="Zoom Meeting(.*)?"] workspace next_on_output --
 
 #### Opacity ####
 # for_window [class="Code"] opacity 0.95
-for_window [class="Pcmanfm"] opacity 0.85
+for_window [app_id="pcmanfm"] opacity 0.85
 
 
 
@@ -469,4 +469,4 @@ bindgesture swipe:left workspace next
 bindsym --whole-window {
     $mod+button4 workspace prev
     $mod+button5 workspace next
-}
+}fzf-tmux --height 50%
