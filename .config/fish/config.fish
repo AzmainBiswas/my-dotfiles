@@ -14,6 +14,10 @@ set -x EDITOR nvim
 set -x MANPAGER "less"
 # set -x FZF_DEFAULT_OPTS '--height 75% --layout=reverse --border'
 set -x FZF_DEFAULT_OPTS ''
+set -x FZF_DEFAULT_COMMAND 'fdfind --strip-cwd-prefix --hidden --follow --exclude .git'
+set -x FZF_CTRL_T_COMMAND "$FZF_DEFAULT_COMMAND"
+set -x FZF_ALT_C_COMMAND "fdfind --type d --strip-cwd-prefix --hidden --follow --exclude .git"
+
 set -x STARSHIP_CONFIG '/home/azmain/.config/starship/starship.toml'
 # set -x CM_LAUNCHER 'rofi'
 set -x PF_INFO 'ascii title os kernel shell uptime palette'
