@@ -469,4 +469,4 @@ bindgesture swipe:left workspace next
 bindsym --whole-window {
     $mod+button4 workspace prev
     $mod+button5 workspace next
-}fzf-tmux --height 50%
+}

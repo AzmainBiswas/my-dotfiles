@@ -4,7 +4,7 @@ end
 
 set -U fish_greeting ""
 
-# starship init fish | source
+starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
 
 # Envioment variables
@@ -24,11 +24,9 @@ set -x PF_INFO 'ascii title os kernel shell uptime palette'
 
 # Fzf settings
 set -Ua FZF_COMPLETE 3
-set -U fzf_preview_dir_cmd exa --all --color=always
-set -U fzf_fd_opts --hidden --exclude=.git
 
 # paths
-set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $HOME/miniconda3/bin $fish_user_path
+set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $HOME/miniconda3/bin $HOME/Documents/fetch-tools $fish_user_path
 
 # ABBR
 abbr cls clear

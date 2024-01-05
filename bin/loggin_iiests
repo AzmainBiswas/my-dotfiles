@@ -17,14 +17,14 @@ login_url = "https://authentication.iiests.ac.in:8003/index.php?zone=hostelnetwo
 with open("/home/azmain/Documents/loggin_iiests.json") as j:
     Payload = json.load(j)
 
-    # post data
-    x = requests.post(url=login_url, data=Payload)
+# post data
+x = requests.post(url=login_url, data=Payload)
 
-    # for notification
-    notify2.init("Authentication Of IIEST")
-    notification = notify2.Notification(
-        "Authentication Of IIEST", "You are loged in to iists proxy"
-    )
-    notification.set_urgency(notify2.URGENCY_NORMAL)
-    notification.set_timeout(5000)
-    notification.show()
+# for notification
+notify2.init("Authentication Of IIEST")
+notification = notify2.Notification(
+    "Authentication Of IIEST", "You are loged in to iists proxy"
+)
+notification.set_urgency(notify2.URGENCY_NORMAL)
+notification.set_timeout(5000)
+notification.show()
