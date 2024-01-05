@@ -76,10 +76,14 @@ function parse_git_dirty {
   if echo ${STATUS} | grep -c "Untracked files" &> /dev/null; then printf " ?"; else printf ""; fi
   if echo ${STATUS} | grep -c "modified"        &> /dev/null; then printf " *"; else printf ""; fi
   if echo ${STATUS} | grep -c "deleted"         &> /dev/null; then printf " -"; else printf ""; fi
+  if echo ${STATUS} | grep -c "branch is up to date" &> /dev/null; then printf " ✓" else printf""; fi
   printf " )"
 }
 
+########### PROMT ####################
+
 PROMPT='%F{yellow}[ %F{green}%~%f  %F{red}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{yellow}]%(?.%F{blue}$.%F{red}$)%f '
+
 #########################################
 ########### plugins #####################
 #########################################
@@ -113,7 +117,7 @@ alias cls=clear
 alias ..="cd .."
 alias code=codium
 alias sz='source ~/.zshrc;echo "ZSH aliases sourced."'
-alias ozrc="nvim ~/.zshrc"
+alias ezsh="nvim ~/.zshrc"
 
 alias ls="exa -aF --color=always --group-directories-first"
 alias ll="exa -alF --color=always --group-directories-first"
