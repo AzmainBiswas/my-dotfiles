@@ -113,7 +113,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+d exec killall rofi || rofi -show drun 
 # bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+Shift+d exec killall dmenu || dmenu_run -F -p "Launcher > " -l 14
-bindsym $mod+w exec killall rofi || rofi -show window
+bindsym $mod+w exec killall rofi || "$HOME/bin/sway_window_switcher"
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -263,7 +263,7 @@ mode "resize" {
 
 # bindsym $mod+Return exec alacritty;focus
 bindsym $mod+Return exec foot
-bindsym Ctrl+Return exec alacritty
+bindsym Ctrl+Return exec wezterm
 bindsym $mod+period exec killall rofi || $HOME/bin/emoji
 bindsym $mod+v exec rofi -modi clipboard:/home/azmain/.config/rofi/scripts/cliphist-rofi -show clipboard
 bindsym $mod+s exec $HOME/bin/script-launcher.sh

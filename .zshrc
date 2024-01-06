@@ -49,28 +49,29 @@ setopt share_history
 
 
 #This loads the Version Control System into your prompt
-# autoload -Uz vcs_info
-# precmd() { vcs_info }
+autoload -Uz vcs_info
+precmd() { vcs_info }
 
-# zstyle ':vcs_info:git:*' formats '%b '
-# setopt PROMPT_SUBST
-# 
-# function parse_git_dirty {
-#   STATUS="$(git status 2> /dev/null)"
-#   if [[ $? -ne 0 ]]; then printf ""; return; else printf " ("; fi
-#   if echo ${STATUS} | grep -c "renamed"         &> /dev/null; then printf " >"; else printf ""; fi
-#   if echo ${STATUS} | grep -c "branch is ahead" &> /dev/null; then printf " ↑"; else printf ""; fi
-#   if echo ${STATUS} | grep -c "new file"       &> /dev/null; then printf " +"; else printf ""; fi
-#   if echo ${STATUS} | grep -c "Untracked files" &> /dev/null; then printf " ?"; else printf ""; fi
-#   if echo ${STATUS} | grep -c "modified"        &> /dev/null; then printf " *"; else printf ""; fi
-#   if echo ${STATUS} | grep -c "deleted"         &> /dev/null; then printf " -"; else printf ""; fi
-#   if echo ${STATUS} | grep -c "branch is up to date" &> /dev/null; then printf " ✓" else printf""; fi
-#   printf " )"
-# }
-# 
-# ########### PROMT ####################
-# 
+zstyle ':vcs_info:git:*' formats '%b '
+setopt PROMPT_SUBST
+
+function parse_git_dirty {
+  STATUS="$(git status 2> /dev/null)"
+  if [[ $? -ne 0 ]]; then printf ""; return; else printf " ("; fi
+  if echo ${STATUS} | grep -c "renamed"         &> /dev/null; then printf " >"; else printf ""; fi
+  if echo ${STATUS} | grep -c "branch is ahead" &> /dev/null; then printf " ↑"; else printf ""; fi
+  if echo ${STATUS} | grep -c "new file"       &> /dev/null; then printf " +"; else printf ""; fi
+  if echo ${STATUS} | grep -c "Untracked files" &> /dev/null; then printf " ?"; else printf ""; fi
+  if echo ${STATUS} | grep -c "modified"        &> /dev/null; then printf " *"; else printf ""; fi
+  if echo ${STATUS} | grep -c "deleted"         &> /dev/null; then printf " -"; else printf ""; fi
+  if echo ${STATUS} | grep -c "branch is up to date" &> /dev/null; then printf " ✓" else printf""; fi
+  printf " )"
+}
+
+########### PROMT ####################
+
 # PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
+PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
 
 #########################################
 ########### plugins #####################
@@ -78,8 +79,8 @@ setopt share_history
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
-# source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
+# source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $HOME/.config/zsh/fzf/completion.zsh
 source $HOME/.config/zsh/fzf/key-bindings.zsh
@@ -202,6 +203,3 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
