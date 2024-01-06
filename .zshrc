@@ -15,9 +15,9 @@ export PF_INFO='ascii title os kernel shell uptime palette'
 ############### PATH ##########################
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Documents/fetch-tools:$PATH"
 
-autoload -Uz compinit
-compinit
-# The following lines were added by compinstall
+
+autoload -U colors; colors
+autoload -U compinit
 
 zstyle ':completion:*' menu select
 zstyle :compinstall filename '/home/azmain/.zshrc'
@@ -35,6 +35,8 @@ zstyle ':completion:*' rehash true
 zstyle ':completion:*' file-sort date
 zstyle ':completion:*' menu yes=long select
 
+compinit
+
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
@@ -42,47 +44,33 @@ bindkey -e
 
 ######### options ##############
 
-unsetopt menu_complete
-unsetopt flowcontrol
-
 setopt autocd extendedglob nomatch
-setopt prompt_subst
-setopt always_to_end
-setopt append_history
-setopt auto_menu
-setopt complete_in_word
-setopt extended_history
-setopt hist_expire_dups_first
-setopt hist_ignore_dups
-setopt hist_ignore_space
-setopt hist_verify
-setopt inc_append_history
 setopt share_history
 
 
 #This loads the Version Control System into your prompt
-autoload -Uz vcs_info
-precmd() { vcs_info }
+# autoload -Uz vcs_info
+# precmd() { vcs_info }
 
-zstyle ':vcs_info:git:*' formats '%b '
-setopt PROMPT_SUBST
-
-function parse_git_dirty {
-  STATUS="$(git status 2> /dev/null)"
-  if [[ $? -ne 0 ]]; then printf ""; return; else printf " ("; fi
-  if echo ${STATUS} | grep -c "renamed"         &> /dev/null; then printf " >"; else printf ""; fi
-  if echo ${STATUS} | grep -c "branch is ahead" &> /dev/null; then printf " ↑"; else printf ""; fi
-  if echo ${STATUS} | grep -c "new file"       &> /dev/null; then printf " +"; else printf ""; fi
-  if echo ${STATUS} | grep -c "Untracked files" &> /dev/null; then printf " ?"; else printf ""; fi
-  if echo ${STATUS} | grep -c "modified"        &> /dev/null; then printf " *"; else printf ""; fi
-  if echo ${STATUS} | grep -c "deleted"         &> /dev/null; then printf " -"; else printf ""; fi
-  if echo ${STATUS} | grep -c "branch is up to date" &> /dev/null; then printf " ✓" else printf""; fi
-  printf " )"
-}
-
-########### PROMT ####################
-
-PROMPT='%F{yellow}[ %F{green}%~%f  %F{red}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{yellow}]%(?.%F{blue}$.%F{red}$)%f '
+# zstyle ':vcs_info:git:*' formats '%b '
+# setopt PROMPT_SUBST
+# 
+# function parse_git_dirty {
+#   STATUS="$(git status 2> /dev/null)"
+#   if [[ $? -ne 0 ]]; then printf ""; return; else printf " ("; fi
+#   if echo ${STATUS} | grep -c "renamed"         &> /dev/null; then printf " >"; else printf ""; fi
+#   if echo ${STATUS} | grep -c "branch is ahead" &> /dev/null; then printf " ↑"; else printf ""; fi
+#   if echo ${STATUS} | grep -c "new file"       &> /dev/null; then printf " +"; else printf ""; fi
+#   if echo ${STATUS} | grep -c "Untracked files" &> /dev/null; then printf " ?"; else printf ""; fi
+#   if echo ${STATUS} | grep -c "modified"        &> /dev/null; then printf " *"; else printf ""; fi
+#   if echo ${STATUS} | grep -c "deleted"         &> /dev/null; then printf " -"; else printf ""; fi
+#   if echo ${STATUS} | grep -c "branch is up to date" &> /dev/null; then printf " ✓" else printf""; fi
+#   printf " )"
+# }
+# 
+# ########### PROMT ####################
+# 
+# PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
 
 #########################################
 ########### plugins #####################
@@ -90,7 +78,8 @@ PROMPT='%F{yellow}[ %F{green}%~%f  %F{red}${vcs_info_msg_0_}%f%F{cyan}$(parse_gi
 
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
+# source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $HOME/.config/zsh/fzf/completion.zsh
 source $HOME/.config/zsh/fzf/key-bindings.zsh
@@ -116,8 +105,9 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 alias cls=clear
 alias ..="cd .."
 alias code=codium
+alias nivm=nvim
 alias sz='source ~/.zshrc;echo "ZSH aliases sourced."'
-alias ezsh="nvim ~/.zshrc"
+alias ez="nvim ~/.zshrc"
 
 alias ls="exa -aF --color=always --group-directories-first"
 alias ll="exa -alF --color=always --group-directories-first"
@@ -127,6 +117,8 @@ alias merge="xrdb -merge ~/.Xresources"
 alias spdl="spotdl --bitrate=320k" 
 alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
 alias fzf_clip="cliphist list | fzf | cliphist decode | wl-copy"
+
+alias clock="tty-clock -tc"
 
 #shell
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -176,8 +168,8 @@ ex() {
     file_name="$(echo $1 | awk -F. '{print $1}')"
     if [ -f $1 ] ; then
       case $1 in
-        *.tar.bz2)   tar xjf $1   ;;
-        *.tar.gz)    tar xzf $1   ;;
+        *.tar.bz2)   tar xvjf $1   ;;
+        *.tar.gz)    tar xvzf $1   ;;
         *.bz2)       bunzip2 $1   ;;
         *.rar)       unrar x $1   ;;
         *.gz)        gunzip $1    ;;
@@ -210,3 +202,6 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
