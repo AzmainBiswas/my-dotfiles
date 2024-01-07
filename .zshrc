@@ -22,15 +22,15 @@ autoload -U compinit
 zstyle ':completion:*' menu select
 zstyle :compinstall filename '/home/azmain/.zshrc'
 zstyle ':completion:*' verbose yes
-# using cash for complition
+## using cash for complition
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
-# case-insensative and substring complition
+## case-insensative and substring complition
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-# Colorize completions using default `ls` colors.
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# To get new binaries into PATH
-zstyle ':completion:*' rehash true
+## Colorize completions using default `ls` colors.
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+## To get new binaries into PATH
+# zstyle ':completion:*' rehash true
 
 zstyle ':completion:*' file-sort date
 zstyle ':completion:*' menu yes=long select
@@ -71,7 +71,8 @@ function parse_git_dirty {
 ########### PROMT ####################
 
 # PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
-PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
+# PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%2~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
+PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%F{blue}>.%F{red}>)%f '
 
 #########################################
 ########### plugins #####################
@@ -80,7 +81,7 @@ PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
+# source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
 source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $HOME/.config/zsh/fzf/completion.zsh
 source $HOME/.config/zsh/fzf/key-bindings.zsh

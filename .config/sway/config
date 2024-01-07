@@ -112,7 +112,7 @@ bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+d exec killall rofi || rofi -show drun 
 # bindsym $mod+Shift+d exec rofi -show run
 bindsym $mod+Shift+d exec killall dmenu || dmenu_run -F -p "Launcher > " -l 14
-bindsym $mod+w exec killall rofi || rofi -show window
+bindsym $mod+w exec killall rofi || "$HOME/bin/sway_window_switcher"
 
 #####################################################################################################################
 #################                          how to exit, logoff, suspend, ...                        #################
@@ -417,8 +417,10 @@ no_focus   [window_type="splash"]
 for_window [tiling] border pixel $borderpx
 for_window [class="Nm-connection-editor"] floating enable
 for_window [class="Shadow"] fullscreen enable
-for_window [app_id="Pavucontrol"] floating enable
+for_window [app_id="pavucontrol"] floating enable
 for_window [title="Picture in picture" ] floating enable
+for_window [ app_id="^qalculate" ] floating enable
+for_window [ app_id="galculator" ] floating enable
 
 # Zoom (😱?)
 # For pop up notification windows that don't use notifications api

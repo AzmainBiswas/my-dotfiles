@@ -8,7 +8,7 @@
 @define-color blue #74c7ec;
 
 * {
-    font-family: "CaskaydiaCove Nerd Font";
+    font-family: "ComicShannsMono Nerd Font";
     font-size: 15px;
     font-weight: bold;
     color: @text;

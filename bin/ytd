@@ -1,16 +1,8 @@
-#!/usr/bin/env python3
-import sys, os
+#!/usr/bin/env bash
 
+video_qu="$1"
+video_url="$2"
+video_name_raw="${@:3}"
+video_name="$(echo ${video_name_raw} | tr ' ' '-' | tr '[A-Z]' '[a-z]' )"
 
-def LinkAndName():
-    VQuality = sys.argv[1]
-    YTlink = sys.argv[2]
-    Vnmae = sys.argv[3:]
-    VnameJoint = "-".join(Vnmae)
-    VnameSmall = VnameJoint.lower()
-    return VQuality, YTlink, VnameSmall
-
-
-VQuality, YTlink, VideoNmae = LinkAndName()
-os.system(f'yt-dlp -f "{VQuality}+ba" {YTlink} -o {VideoNmae}')
-# print(f'yt-dlp -f "{VQuality}+ba" {YTlink} -o {VideoNmae}')
+yt-dlp -f "${video_qu}+ba" --merge-output-format mp4 ${video_url} -o "${video_name}"
