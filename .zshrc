@@ -71,7 +71,8 @@ function parse_git_dirty {
 ########### PROMT ####################
 
 # PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
-PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
+# PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
+PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%B%F{blue}>.%F{red}>)%f%b '
 
 #########################################
 ########### plugins #####################
@@ -162,26 +163,26 @@ ovc() {
     nvim .
 }
 
-###---------- ARCHIVE EXTRACT ----------###
+###---------- ARCHIVE EXTRACT ----------#####
 
 ex() {
     local file_name
     file_name="$(echo $1 | awk -F. '{print $1}')"
     if [ -f $1 ] ; then
       case $1 in
-        *.tar.bz2)   tar xvjf $1   ;;
-        *.tar.gz)    tar xvzf $1   ;;
+        *.tar.bz2)   mkdir "./$file_name" && tar xvjf $1 --directory="./$file_name"  ;;
+        *.tar.gz)    mkdir "./$file_name" && tar xvzf $1 --directory="./$file_name" ;;
         *.bz2)       bunzip2 $1   ;;
         *.rar)       unrar x $1   ;;
         *.gz)        gunzip $1    ;;
-        *.tar)       tar xf $1    ;;
-        *.tbz2)      tar xjf $1   ;;
-        *.tgz)       tar xzf $1   ;;
+        *.tar)       mkdir "./$file_name" && tar xvf $1 --directory="./$file_name" ;;
+        *.tbz2)      mkdir "./$file_name" && tar xvjf $1 --directory="./$file_name" ;;
+        *.tgz)       mkdir "./$file_name" && tar xvzf $1 --directory="./$file_name";;
         *.zip)       unzip $1 -d "./${file_name}"     ;;
         *.Z)         uncompress $1;;
         *.7z)        7za e x $1   ;;
         *.deb)       ar x $1      ;;
-        *.tar.xz)    tar xf $1    ;;
+        *.tar.xz)    mkdir "./$file_name" && tar xvf $1 --directory="./$file_name" ;;
         *.tar.zst)   unzstd $1    ;;
         *)           echo "'$1' cannot be extracted via ex()" ;;
     esac
