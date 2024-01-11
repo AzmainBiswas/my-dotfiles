@@ -141,7 +141,7 @@
                 ""
             ]
         },
-        "on-click": "foot -e alsamixer"
+        "on-click": "killall pavucontrol || pavucontrol"
     },
     "keyboard-state": {
         "numlock": true,

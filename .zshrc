@@ -204,3 +204,5 @@ rga-fzf() {
 	echo "opening $file" &&
 	xdg-open "$file"
 }
+
+eval "$(starship init zsh)"

@@ -12,5 +12,5 @@ def LinkAndName():
 
 
 VQuality, YTlink, VideoNmae = LinkAndName()
-os.system(f'yt-dlp -f "{VQuality}+ba" {YTlink} -o {VideoNmae}')
+os.system(f'yt-dlp -f "{VQuality}+ba" --merge-output-format mp4 {YTlink} -o {VideoNmae}')
 # print(f'yt-dlp -f "{VQuality}+ba" {YTlink} -o {VideoNmae}')

@@ -1,120 +1,55 @@
 format = """
-$os\
+$username\
+$hostname\
 $directory\
-$character
-"""
-
-right_format = """
-$shell\
-$fossil_branch\
 $git_branch\
-$git_commit\
 $git_state\
-$git_metrics\
 $git_status\
-$hg_branch\
-$pijul_channel\
-$docker_context\
-$package\
-$c\
-$cmake\
-$lua\
-$python\
-$meson\
-$sudo\
 $cmd_duration\
-$jobs\
-$time\
-$status\
-$container\
-$battery\
-"""
-
-[character]
-success_symbol = '[➜](bold green) '
-error_symbol = '[✗ ](bold red) '
-
-[shell]
-fish_indicator = 'fish'
-format = 'in [$indicator]($style) '
-style = 'bold blue'
-disabled = false
-
-[c]
-symbol = " "
+$python\
+$lua\
+$line_break\
+$character"""
 
 [directory]
-read_only = " 󰌾"
-truncation_length = 2
-format = ' [\($path\)]($style)[$read_only]($read_only_style) '
+style = "blue"
 
-[battery]
-full_symbol = '  '
-charging_symbol = '󰂈 '
-discharging_symbol = '💀 '
-
-[[battery.display]]
-threshold = 10
-style = 'bold red'
-
-[[battery.display]]
-threshold = 30
-style = 'bold yellow'
-discharging_symbol = '💦'
-
-[fossil_branch]
-symbol = " "
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
 
 [git_branch]
-symbol = " "
+format = "[$branch]($style)"
+style = "bright-green"
 
-[hg_branch]
-symbol = " "
+[git_status]
+format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style)"
+style = "bright-cyan"
+conflicted = " =${count}"
+untracked = " ?${count}"
+modified = " m${count}"
+staged = " +${count}"
+renamed = " ->${count}"
+deleted = " x${count}"
+stashed = "≡"
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
 
-[hostname]
-ssh_symbol = " "
-
-[lua]
-symbol = " "
-
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nodejs]
-symbol = " "
-
-[os]
-format = " [$symbol]($style) "
-style = "bright white"
-disabled = true
-
-[os.symbols]
-Arch = " "
-Artix = " "
-Debian = " "
-Fedora = " "
-Linux = " "
-Windows = "󰍲 "
-
-
-[python]
-symbol = " "
-
-[rlang]
-symbol = "󰟔 "
-
-[rust]
-symbol = " "
-
-[jobs]
-symbol = ""
-style = "bold red"
-number_threshold = 1
-format = "[ $symbol ]($style)"
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bright-black"
 
 [cmd_duration]
-format = "[ took $duration ]($style)"
-style = "red"
+format = "[$duration]($style) "
+style = "yellow"
+
+[python]
+format = '[python ${pyenv_prefix}(${version}) \(${virtualenv}\)]($style) '
+style = "bright-blue"
+
+
+[lua]
+format = "[lua $version]($style) "
+style = "bright-yellow"
