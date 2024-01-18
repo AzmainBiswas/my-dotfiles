@@ -1,5 +1,5 @@
 import:
-  - /home/azmain/.config/alacritty/themes/catppuccin-mocha.yml
+  - /home/azmain/.config/alacritty/themes/gruvbox_dark.yaml
 
     # colors:
     #   primary:
@@ -12,7 +12,7 @@ import:
 
 window:
   padding:
-    x: 0
+    x: 5
     y: 5
 
   class:
@@ -35,16 +35,16 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: RobotoMono Nerd Font
+    family: UbuntuMono Nerd Font
     style: Regular
   bold:
-    family: RobotoMono Nerd Font
+    family: UbuntuMono Nerd Font
     style: Bold
   italic:
-    family: RobotoMono Nerd Font
+    family: UbuntuMono Nerd Font
     style: Italic
   bold_italic:
-    family: RobotoMono Nerd Font 
+    family: UbuntuMono Nerd Font 
     style: Bold Italic
 
   # Point size

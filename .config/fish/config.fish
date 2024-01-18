@@ -4,7 +4,7 @@ end
 
 set -U fish_greeting ""
 
-starship init fish | source
+# starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
 
 # Envioment variables
