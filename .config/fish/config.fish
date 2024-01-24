@@ -28,13 +28,15 @@ set -Ua FZF_COMPLETE 3
 # paths
 set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.local/bin $HOME/.cargo/bin $HOME/miniconda3/bin $HOME/Documents/fetch-tools $fish_user_path
 
+# alias
+alias cls clear
+alias ll "exa -alF --color=always --group-directories-first"
+alias ls "exa -aF --color=always --group-directories-first"
+alias tree "exa -F --color=always --tree"
+
 # ABBR
-abbr cls clear
-abbr ll "exa -alF --color=always --group-directories-first"
-abbr ls "exa -aF --color=always --group-directories-first"
-abbr tree "exa -F --color=always --tree"
 abbr sd "cd (fd . --type directory | fzf )"
-abbr sfc "source ~/.config/fish/config.fish"
+abbr sf "source ~/.config/fish/config.fish && echo 'fish is reloaded'"
 
 
 abbr code codium

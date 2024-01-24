@@ -1,26 +1,73 @@
 format = """
-$username\
-$hostname\
+$os\
 $directory\
-$git_branch\
-$git_state\
-$git_status\
-$cmd_duration\
-$python\
-$lua\
-$line_break\
-$character"""
+$character
+"""
 
-[directory]
-style = "blue"
+right_format = """
+$shell\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$lua\
+$python\
+$meson\
+$sudo\
+$cmd_duration\
+$jobs\
+$time\
+$status\
+$container\
+$battery\
+"""
 
 [character]
-success_symbol = "[❯](green)"
-error_symbol = "[❯](red)"
-vimcmd_symbol = "[❮](green)"
+success_symbol = '[➜](bold green) '
+error_symbol = '[✗ ](bold red) '
+
+[shell]
+fish_indicator = 'fish'
+format = 'in [$indicator]($style) '
+style = 'bold blue'
+disabled = false
+
+[c]
+symbol = " "
+
+[directory]
+read_only = " 󰌾"
+truncation_length = 2
+format = ' [\($path\)]($style)[$read_only]($read_only_style) '
+
+[battery]
+full_symbol = '  '
+charging_symbol = '󰂈 '
+discharging_symbol = '💀 '
+
+[[battery.display]]
+threshold = 10
+style = 'bold red'
+
+[[battery.display]]
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦'
+
+[fossil_branch]
+symbol = " "
 
 [git_branch]
 format = "[$branch]($style)"
+symbol = " "
 style = "bright-green"
 
 [git_status]
@@ -41,15 +88,53 @@ behind = '⇣${count}'
 format = '\([$state( $progress_current/$progress_total)]($style)\) '
 style = "bright-black"
 
-[cmd_duration]
-format = "[$duration]($style) "
-style = "yellow"
+[hg_branch]
+symbol = " "
 
-[python]
-format = '[python ${pyenv_prefix}(${version}) \(${virtualenv}\)]($style) '
-style = "bright-blue"
-
+[hostname]
+ssh_symbol = " "
 
 [lua]
-format = "[lua $version]($style) "
-style = "bright-yellow"
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nodejs]
+symbol = " "
+
+[os]
+format = " [$symbol]($style) "
+style = "bright white"
+disabled = true
+
+[os.symbols]
+Arch = " "
+Artix = " "
+Debian = " "
+Fedora = " "
+Linux = " "
+Windows = "󰍲 "
+
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[rust]
+symbol = " "
+
+[jobs]
+symbol = ""
+style = "bold red"
+number_threshold = 1
+format = "[ $symbol ]($style)"
+
+[cmd_duration]
+format = "[ took $duration ]($style)"
+style = "red"

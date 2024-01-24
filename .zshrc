@@ -1,6 +1,7 @@
-export BROWSER="brave-browser"
+export EDITOR="nvim"
+export VISUAL="nvim"
+export BROWSER="floorp"
 export TERM="xterm-256color"
-export EDITOR=nvim
 export MANPAGER="less"
 
 # fzf
@@ -28,7 +29,7 @@ zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
 # case-insensative and substring complition
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 # Colorize completions using default `ls` colors.
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+# zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 # To get new binaries into PATH
 zstyle ':completion:*' rehash true
 
@@ -72,19 +73,62 @@ function parse_git_dirty {
 
 # PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
 # PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
-PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%B%F{blue}>.%F{red}>)%f%b '
+PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%F{blue}>.%F{red}>)%f '
 
 #########################################
 ########### plugins #####################
 #########################################
 
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# source $HOME/.config/zsh/powerlevel10k/powerlevel10k.zsh-theme
-source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
-source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+# zsh-autosuggestions
+if [[ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]]; then
+    source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    echo "To install zsh-autosuggestions:"
+    echo "sudo apt install zsh-autosuggestions"
+    echo ""
+fi
+
+#zsh-syntax-highlighting
+if [[ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]]; then
+    source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+else
+    echo "To install zsh-syntax-highlighting: "
+    echo "sudo apt install zsh-syntax-highlighting"
+    echo ""
+fi
+
+# Powerlevel10k
+
+# if [[ -f "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+#     source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
+# else
+#     echo "Please clone powerlevel10k in $HOME/.config/powerlevel10k/"
+# fi
+
+# zsh-z
+if [[ -f "$HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh" ]]; then
+    source $HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh
+else
+    echo "clone zsh-z plugin for github."
+    echo ""
+fi
+
+# zsh-history-substring-search
+if [[ -f "$HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh" ]]; then
+    source $HOME/.config/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+else
+    echo "colne zsh-history-substring-search from github."
+    echo ""
+fi
+
+
+# zsh fzf complition
 source $HOME/.config/zsh/fzf/completion.zsh
 source $HOME/.config/zsh/fzf/key-bindings.zsh
+
+##################
+##### binds ######
+##################
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -107,7 +151,8 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 alias cls=clear
 alias ..="cd .."
 alias code=codium
-alias nivm=nvim
+alias vim="nvim"
+alias nivm="nvim"
 alias sz='source ~/.zshrc;echo "ZSH aliases sourced."'
 alias ez="nvim ~/.zshrc"
 
@@ -121,6 +166,7 @@ alias tn="tmux new -s $(pwd | sed 's/.*\///g')"
 alias fzf_clip="cliphist list | fzf | cliphist decode | wl-copy"
 
 alias clock="tty-clock -tc"
+alias spe="source $HOME/.python_env/bin/activate"
 
 #shell
 alias tobash="sudo chsh $USER -s /bin/bash && echo 'Now log out.'"
@@ -205,4 +251,4 @@ rga-fzf() {
 	xdg-open "$file"
 }
 
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"

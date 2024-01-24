@@ -8,12 +8,13 @@
 
 export PATH=$HOME/.local/bin:$HOME/bin:$HOME/latex-bin:$HOME/menu-scripts:$HOME/.cargo/bin:$PATH
 
-alias ls='exa -aF --icons'
-alias ll='exa -alF --icons'
+alias ls="ls -AF --color"
+alias ll="ls -AlFh --color"
+alias cls="clear"
 alias grep='grep --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/my-dotfiles/ --work-tree=$HOME'
 
-PS1='[\u@\h \W]\$ '
+PS1='\e[1;31m[\e[0m\e[1;32m\u\e[0m@\e[1;34m\h\e[0m \e[1;36m\w\e[0m\e[1;31m]\e[0m\$ '
 
 # ripgrep all
 rga-fzf() {
@@ -31,20 +32,3 @@ rga-fzf() {
 }
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# pfetch
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/azmain/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/azmain/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/azmain/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/azmain/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
