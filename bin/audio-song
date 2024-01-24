@@ -26,7 +26,7 @@ playRandom() {
     mpc add /
     mpc random on
     mpc play
-    notify-send "Playing" "$(mpc current)"
+    notify-send -i "mpd" "Playing" "$(mpc current)"
 }
 
 play() {
@@ -35,13 +35,13 @@ play() {
     mpc -q add "$music"
     mpc play
     mpc repeat on
-    notify-send "Playing" "$(mpc current)"
+    notify-send -i "mpd" "Playing" "$(mpc current)"
 }
 
 add() {
     music2=$(mpc listall | ${MENU} 'Add to queue > ')
     mpc -q add "$music2"
-    notify-send "Added" "$(printf ${music2})"
+    notify-send -i "mpd" "Added" "$(printf ${music2})"
 }
 
 FolderPlay() {
@@ -56,8 +56,8 @@ FolderPlay() {
     mpc repeat on
     mpc random on
     mpc play
-    notify-send "Added" "$(printf ${folder})"
-    notify-send "Playing" "$(mpc current)"
+    notify-send -i "mpd" "Added" "$(printf ${folder})"
+    notify-send -i "mpd" "Playing" "$(mpc current)"
 }
 
 
@@ -88,7 +88,7 @@ case ${choose} in
     4)
 	mpc stop ;;
     5)
-	notify-send "Playing" "$(mpc current)" ;;
+	notify-send -i "mpd" "Playing" "$(mpc current)" ;;
     6)
 	mpc volume 25 ;;
     7)
