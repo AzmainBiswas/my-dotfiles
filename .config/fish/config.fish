@@ -39,7 +39,6 @@ abbr sd "cd (fd . --type directory | fzf )"
 abbr sf "source ~/.config/fish/config.fish && echo 'fish is reloaded'"
 
 
-abbr code codium
 abbr spdl "spotdl --bitrate=320k" 
 abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
 

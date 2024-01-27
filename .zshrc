@@ -150,7 +150,6 @@ ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 alias cls=clear
 alias ..="cd .."
-alias code=codium
 alias vim="nvim"
 alias nivm="nvim"
 alias sz='source ~/.zshrc;echo "ZSH aliases sourced."'
