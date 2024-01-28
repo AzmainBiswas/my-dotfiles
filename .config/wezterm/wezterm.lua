@@ -3,18 +3,23 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- fonts
-config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13
+config.font = wezterm.font("ComicShannsMono Nerd Font")
+config.font_size = 14
 
 -- color scheme
-config.color_scheme = "Catppuccin Mocha"
+config.color_scheme = "Ubuntu"
 
 -- background
-config.window_background_opacity = 0.85
+config.window_background_opacity = 1.0
 
+-- dimensions
+config.initial_cols = 150
+config.initial_rows = 35
+
+config.integrated_title_button_style = "Gnome"
 -- hide tab bar
-config.enable_tab_bar = false
--- config.hide_tab_bar_if_only_one_tab = true
+-- config.enable_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
 
 -- config.window_background_image = "/mnt/media/wallpapers/cat_leaves.png"
 -- config.window_background_image_hsb = {

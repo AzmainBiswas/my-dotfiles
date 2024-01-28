@@ -20,21 +20,23 @@ export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Documents/fetch-t
 autoload -U colors; colors
 autoload -U compinit
 
-zstyle ':completion:*' menu select
+zstyle ':completion:*' menu yes=long select
+zstyle ':completion:*' file-sort date
 zstyle :compinstall filename '/home/azmain/.zshrc'
 zstyle ':completion:*' verbose yes
 # using cash for complition
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
 # case-insensative and substring complition
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 # Colorize completions using default `ls` colors.
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
-# To get new binaries into PATH
-zstyle ':completion:*' rehash true
 
-zstyle ':completion:*' file-sort date
-zstyle ':completion:*' menu yes=long select
+# To get new binaries into PATH
+# zstyle ':completion:*' rehash true
+
 
 compinit
 
@@ -49,12 +51,12 @@ setopt autocd extendedglob nomatch
 setopt share_history
 
 
-#This loads the Version Control System into your prompt
-autoload -Uz vcs_info
-precmd() { vcs_info }
-
-zstyle ':vcs_info:git:*' formats '%b '
-setopt PROMPT_SUBST
+# This loads the Version Control System into your prompt
+# autoload -Uz vcs_info
+# precmd() { vcs_info }
+# 
+# zstyle ':vcs_info:git:*' formats '%b '
+# setopt PROMPT_SUBST
 
 function parse_git_dirty {
   STATUS="$(git status 2> /dev/null)"
@@ -73,7 +75,8 @@ function parse_git_dirty {
 
 # PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
 # PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
-PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%F{blue}>.%F{red}>)%f '
+# PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%F{blue}>.%F{red}>)%f '
+PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %(?.%F{blue}>.%F{red}>)%f '
 
 #########################################
 ########### plugins #####################
