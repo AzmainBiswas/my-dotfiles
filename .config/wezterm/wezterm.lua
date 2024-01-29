@@ -3,11 +3,12 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- fonts
-config.font = wezterm.font("ComicShannsMono Nerd Font")
-config.font_size = 14
+config.font = wezterm.font("UbuntuMono Nerd Font")
+config.font_size = 15.2
 
 -- color scheme
-config.color_scheme = "Ubuntu"
+-- config.color_scheme = "Ubuntu"
+config.color_scheme = "tokyonight_night"
 
 -- background
 config.window_background_opacity = 1.0
