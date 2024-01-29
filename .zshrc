@@ -35,7 +35,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 
 # zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 # To get new binaries into PATH
-# zstyle ':completion:*' rehash true
+zstyle ':completion:*' rehash true
 
 
 compinit
@@ -51,31 +51,7 @@ setopt autocd extendedglob nomatch
 setopt share_history
 
 
-# This loads the Version Control System into your prompt
-# autoload -Uz vcs_info
-# precmd() { vcs_info }
-# 
-# zstyle ':vcs_info:git:*' formats '%b '
-# setopt PROMPT_SUBST
-
-function parse_git_dirty {
-  STATUS="$(git status 2> /dev/null)"
-  if [[ $? -ne 0 ]]; then printf ""; return; else printf " ("; fi
-  if echo ${STATUS} | grep -c "renamed"         &> /dev/null; then printf " >"; else printf ""; fi
-  if echo ${STATUS} | grep -c "branch is ahead" &> /dev/null; then printf " ↑"; else printf ""; fi
-  if echo ${STATUS} | grep -c "new file"       &> /dev/null; then printf " +"; else printf ""; fi
-  if echo ${STATUS} | grep -c "Untracked files" &> /dev/null; then printf " ?"; else printf ""; fi
-  if echo ${STATUS} | grep -c "modified"        &> /dev/null; then printf " *"; else printf ""; fi
-  if echo ${STATUS} | grep -c "deleted"         &> /dev/null; then printf " -"; else printf ""; fi
-  if echo ${STATUS} | grep -c "branch is up to date" &> /dev/null; then printf " ✓" else printf""; fi
-  printf " )"
-}
-
 ########### PROMT ####################
-
-# PROMPT='%F{red}[ %F{green}%~%f  %F{yellow}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%F{red}]%(?.%F{blue}>>.%F{red}>>)%f '
-# PROMPT='%F{green}%B%n%f%b%F{red}@%f%F{blue}%B%m%b%f %F{green}%B%~%b%f %F{gray}${vcs_info_msg_0_}%f%F{cyan}$(parse_git_dirty)%f%(?.%F{blue}>.%F{red}>)%f '
-# PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %F{magenta}${vcs_info_msg_0_}%f%(?.%F{blue}>.%F{red}>)%f '
 PROMPT='%F{green}%B%n%f%F{red}@%f%F{blue}%m%b%f %F{gray}on%f %F{green}%B%2~%b%f %(?.%F{blue}>.%F{red}>)%f '
 
 #########################################
@@ -101,12 +77,9 @@ else
 fi
 
 # Powerlevel10k
-
-# if [[ -f "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
-#     source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
-# else
-#     echo "Please clone powerlevel10k in $HOME/.config/powerlevel10k/"
-# fi
+if [[ -f "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+    source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 # zsh-z
 if [[ -f "$HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh" ]]; then
@@ -254,3 +227,6 @@ rga-fzf() {
 }
 
 # eval "$(starship init zsh)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

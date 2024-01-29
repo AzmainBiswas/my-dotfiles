@@ -13,8 +13,8 @@ config.color_scheme = "Ubuntu"
 config.window_background_opacity = 1.0
 
 -- dimensions
-config.initial_cols = 150
-config.initial_rows = 35
+config.initial_cols = 200
+config.initial_rows = 50
 
 config.integrated_title_button_style = "Gnome"
 -- hide tab bar
@@ -33,5 +33,13 @@ config.hide_tab_bar_if_only_one_tab = true
 -- 	-- You can adjust the saturation also.
 -- 	saturation = 1.0,
 -- }
+
+config.keys = {
+	{
+		key = "F11",
+		-- mods = "SHIFT|CTRL",
+		action = wezterm.action.ToggleFullScreen,
+	},
+}
 
 return config

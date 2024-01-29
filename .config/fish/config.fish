@@ -38,7 +38,8 @@ alias tree "exa -F --color=always --tree"
 abbr sd "cd (fd . --type directory | fzf )"
 abbr sf "source ~/.config/fish/config.fish && echo 'fish is reloaded'"
 
-
+abbr py "python"
+abbr spe "source ~/.python_env/bin/activate.fish"
 abbr spdl "spotdl --bitrate=320k" 
 abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
 
