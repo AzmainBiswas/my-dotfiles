@@ -11,7 +11,7 @@ config.font_size = 15.2
 config.color_scheme = "tokyonight_night"
 
 -- background
-config.window_background_opacity = 1.0
+config.window_background_opacity = 0.9
 
 -- dimensions
 config.initial_cols = 200
