@@ -3,8 +3,10 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- fonts
-config.font = wezterm.font("UbuntuMono Nerd Font")
+config.font = wezterm.font("ComicShannsMono Nerd Font")
 config.font_size = 15.2
+
+config.default_cursor_style = "SteadyUnderline"
 
 -- color scheme
 -- config.color_scheme = "Ubuntu"
