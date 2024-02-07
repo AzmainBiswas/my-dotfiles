@@ -11,7 +11,8 @@ config.default_cursor_style = "SteadyUnderline"
 
 -- color scheme
 -- config.color_scheme = "Ubuntu"
-config.color_scheme = "tokyonight_night"
+-- config.color_scheme = "tokyonight_night"
+config.color_scheme = "GitHub Dark"
 
 -- background
 config.window_background_opacity = 0.9
