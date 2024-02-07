@@ -3,8 +3,9 @@ local wezterm = require("wezterm")
 local config = {}
 
 -- fonts
-config.font = wezterm.font("ComicShannsMono Nerd Font")
-config.font_size = 15.2
+-- config.font = wezterm.font("ComicShannsMono Nerd Font")
+config.font = wezterm.font("JetBrainsMono Nerd Font")
+config.font_size = 13.5
 
 config.default_cursor_style = "SteadyUnderline"
 
@@ -16,8 +17,8 @@ config.color_scheme = "tokyonight_night"
 config.window_background_opacity = 0.9
 
 -- dimensions
-config.initial_cols = 200
-config.initial_rows = 50
+config.initial_cols = 150
+config.initial_rows = 35
 
 config.integrated_title_button_style = "Gnome"
 -- hide tab bar

@@ -77,9 +77,9 @@ else
 fi
 
 # Powerlevel10k
-if [[ -f "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
-    source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
-fi
+# if [[ -f "$HOME/.config/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+#     source $HOME/.config/powerlevel10k/powerlevel10k.zsh-theme
+# fi
 
 # zsh-z
 if [[ -f "$HOME/.config/zsh/zsh-z/zsh-z.plugin.zsh" ]]; then
@@ -245,7 +245,7 @@ _dotnet_zsh_complete()
 
 compdef _dotnet_zsh_complete dotnet
 
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

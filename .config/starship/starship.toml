@@ -45,8 +45,8 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-truncation_length = 2
-format = ' [\($path\)]($style)[$read_only]($read_only_style) '
+truncation_length = 8
+format = ' [$path]($style)[$read_only]($read_only_style) '
 
 [battery]
 full_symbol = '  '

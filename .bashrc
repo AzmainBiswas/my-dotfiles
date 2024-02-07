@@ -16,6 +16,34 @@ alias config='/usr/bin/git --git-dir=$HOME/my-dotfiles/ --work-tree=$HOME'
 
 PS1='\e[1;31m[\e[0m\e[1;32m\u\e[0m@\e[1;34m\h\e[0m \e[1;36m\w\e[0m\e[1;31m]\e[0m\$ '
 
+
+# file extract
+ex() {
+    local file_name
+    file_name="$(echo $1 | awk -F. '{print $1}')"
+    if [ -f $1 ] ; then
+      case $1 in
+        *.tar.bz2)   mkdir "./$file_name" && tar xvjf $1 --directory="./$file_name"  ;;
+        *.tar.gz)    mkdir "./$file_name" && tar xvzf $1 --directory="./$file_name" ;;
+        *.bz2)       bunzip2 $1   ;;
+        *.rar)       unrar x $1   ;;
+        *.gz)        gunzip $1    ;;
+        *.tar)       mkdir "./$file_name" && tar xvf $1 --directory="./$file_name" ;;
+        *.tbz2)      mkdir "./$file_name" && tar xvjf $1 --directory="./$file_name" ;;
+        *.tgz)       mkdir "./$file_name" && tar xvzf $1 --directory="./$file_name";;
+        *.zip)       unzip $1 -d "./${file_name}"     ;;
+        *.Z)         uncompress $1;;
+        *.7z)        7za e x $1   ;;
+        *.deb)       ar x $1      ;;
+        *.tar.xz)    mkdir "./$file_name" && tar xvf $1 --directory="./$file_name" ;;
+        *.tar.zst)   unzstd $1    ;;
+        *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
 # ripgrep all
 rga-fzf() {
 	RG_PREFIX="rga --files-with-matches"
