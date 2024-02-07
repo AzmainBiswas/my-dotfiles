@@ -5,7 +5,6 @@ $character
 """
 
 right_format = """
-$shell\
 $fossil_branch\
 $git_branch\
 $git_commit\
@@ -16,6 +15,7 @@ $hg_branch\
 $pijul_channel\
 $docker_context\
 $package\
+$rlang\
 $c\
 $cmake\
 $lua\
@@ -109,16 +109,17 @@ symbol = " "
 
 [os]
 format = " [$symbol]($style) "
-style = "bright white"
+style = "red"
 disabled = true
 
 [os.symbols]
-Arch = " "
-Artix = " "
-Debian = " "
-Fedora = " "
-Linux = " "
-Windows = "󰍲 "
+Arch = ""
+Artix = ""
+Ubuntu = ""
+Debian = ""
+Fedora = ""
+Linux = ""
+Windows = "󰍲"
 
 
 [python]
