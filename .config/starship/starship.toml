@@ -20,6 +20,7 @@ $c\
 $cmake\
 $lua\
 $python\
+$dotnet\
 $meson\
 $sudo\
 $cmd_duration\
@@ -32,7 +33,7 @@ $battery\
 
 [character]
 success_symbol = '[➜](bold green) '
-error_symbol = '[✗ ](bold red) '
+error_symbol = '[✗](bold red) '
 
 [shell]
 fish_indicator = 'fish'
@@ -122,6 +123,9 @@ Windows = "󰍲 "
 
 [python]
 symbol = " "
+
+[dotnet]
+symbol = " "
 
 [rlang]
 symbol = "󰟔 "
