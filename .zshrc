@@ -227,7 +227,6 @@ rga-fzf() {
 }
 
 # zsh parameter completion for the dotnet CLI
-
 _dotnet_zsh_complete()
 {
   local completions=("$(dotnet complete "$words")")
@@ -246,6 +245,3 @@ _dotnet_zsh_complete()
 compdef _dotnet_zsh_complete dotnet
 
 eval "$(starship init zsh)"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
