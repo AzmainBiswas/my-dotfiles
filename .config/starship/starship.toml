@@ -62,7 +62,7 @@ style = 'bold red'
 [[battery.display]]
 threshold = 30
 style = 'bold yellow'
-discharging_symbol = '💦'
+discharging_symbol = '💦 '
 
 [fossil_branch]
 symbol = " "

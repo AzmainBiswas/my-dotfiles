@@ -184,6 +184,10 @@ ovc() {
     nvim .
 }
 
+mkcd() {
+    mkdir -p "$@" && cd "$@" && pwd
+}
+
 ###---------- ARCHIVE EXTRACT ----------#####
 
 ex() {

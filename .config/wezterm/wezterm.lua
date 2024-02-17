@@ -5,7 +5,7 @@ local config = {}
 -- fonts
 -- config.font = wezterm.font("ComicShannsMono Nerd Font")
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13.5
+config.font_size = 12.5
 
 config.default_cursor_style = "SteadyUnderline"
 
@@ -15,7 +15,7 @@ config.default_cursor_style = "SteadyUnderline"
 config.color_scheme = "GitHub Dark"
 
 -- background
-config.window_background_opacity = 0.9
+config.window_background_opacity = 1.0
 
 -- dimensions
 config.initial_cols = 150

@@ -1,5 +1,5 @@
 import:
-      - /home/azmain/.config/alacritty/themes/catppuccin-mocha.yml
+      - /home/azmain/.config/alacritty/themes/blood_moon.yaml
   #  - /home/azmain/.config/alacritty/themes/gruvbox_dark.yaml
 
     # colors:
@@ -25,7 +25,7 @@ window:
   dimensions:
     columns: 150
     lines: 35
-  opacity: 0.9
+  opacity: 1.0
   decorations: full
 scrolling:
   history: 50000
@@ -36,20 +36,20 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: UbuntuMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Regular
   bold:
-    family: UbuntuMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Bold
   italic:
-    family: UbuntuMono Nerd Font
+    family: JetBrainsMono Nerd Font
     style: Italic
   bold_italic:
-    family: UbuntuMono Nerd Font 
+    family: JetBrainsMono Nerd Font 
     style: Bold Italic
 
   # Point size
-  size: 15.0
+  size: 13.5
 draw_bold_text_with_bright_colors: true
 
 
