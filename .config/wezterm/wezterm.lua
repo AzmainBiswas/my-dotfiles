@@ -26,6 +26,7 @@ config.integrated_title_button_style = "Gnome"
 -- hide tab bar
 -- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
+config.window_decorations = "TITLE | RESIZE"
 
 -- config.window_background_image = "/mnt/media/wallpapers/cat_leaves.png"
 -- config.window_background_image_hsb = {
