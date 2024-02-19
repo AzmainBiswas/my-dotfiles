@@ -456,8 +456,8 @@ exec_always {
 #################### bindgester
 ####################################################
 # Allow switching between workspaces with left and right swipes
-bindgesture swipe:right workspace prev
-bindgesture swipe:left workspace next
+# bindgesture swipe:right workspace prev
+# bindgesture swipe:left workspace next
 
 # Allow container movements by pinching them
 # bindgesture pinch:inward+up move up

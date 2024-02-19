@@ -3,6 +3,7 @@ export VISUAL="nvim"
 export BROWSER="floorp"
 export TERM="xterm-256color"
 export MANPAGER="less"
+export QT_QPA_PLATFORMTHEME=gnome
 
 # fzf
 export FZF_DEFAULT_OPTS=''
