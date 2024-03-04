@@ -7,9 +7,9 @@ export QT_QPA_PLATFORMTHEME=gnome
 
 # fzf
 export FZF_DEFAULT_OPTS=''
-export FZF_DEFAULT_COMMAND='fdfind --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_DEFAULT_COMMAND='fd --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_ALT_C_COMMAND="fdfind --type d --strip-cwd-prefix --hidden --follow --exclude .git"
+export FZF_ALT_C_COMMAND="fd --type d --strip-cwd-prefix --hidden --follow --exclude .git"
 
 export STARSHIP_CONFIG='/home/azmain/.config/starship/starship.toml'
 export PF_INFO='ascii title os kernel shell uptime palette'
@@ -154,7 +154,7 @@ alias tofish="sudo chsh $USER -s /bin/fish && echo 'Now log out.'"
 ################################
 
 odf() {
-    dir="$(fdfind . $HOME/.dotfiles -t d --hidden | fzf)"
+    dir="$(fd . $HOME/.dotfiles -t d --hidden | fzf)"
 
     if [[ "${dir}" == "" ]]; then
         echo "choose a directory"
@@ -166,7 +166,7 @@ odf() {
 
 sd() {
     local dir
-    dir="$(fdfind . --type directory | fzf)"
+    dir="$(fd . --type directory | fzf)"
     cd ${dir}
 }
 
