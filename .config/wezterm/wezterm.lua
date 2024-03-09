@@ -8,7 +8,8 @@ local config = {}
 config.font = wezterm.font("Fira Code")
 config.font_size = 13.5
 
-config.default_cursor_style = "SteadyUnderline"
+config.default_cursor_style = "SteadyBar"
+-- SteadyBlock, BlinkingBlock, SteadyUnderline, BlinkingUnderline, SteadyBar, BlinkingBar
 
 -- color scheme
 -- config.color_scheme = "Ubuntu"

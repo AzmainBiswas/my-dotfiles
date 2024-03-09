@@ -102,6 +102,7 @@ fi
 # zsh fzf complition
 source $HOME/.config/zsh/fzf/completion.zsh
 source $HOME/.config/zsh/fzf/key-bindings.zsh
+source $HOME/.config/zsh/zsh-autopair/autopair.zsh
 
 ##################
 ##### binds ######

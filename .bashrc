@@ -14,7 +14,7 @@ alias cls="clear"
 alias grep='grep --color=auto'
 alias config='/usr/bin/git --git-dir=$HOME/my-dotfiles/ --work-tree=$HOME'
 
-PS1='\e[1;31m[\e[0m\e[1;32m\u\e[0m@\e[1;34m\h\e[0m \e[1;36m\w\e[0m\e[1;31m]\e[0m\$ '
+PS1='\e[0m\e[1;32m\u\e[0m@\e[1;34m\h\e[0m \e[1;36m\w\e[0m\e[0m > '
 
 
 # file extract
