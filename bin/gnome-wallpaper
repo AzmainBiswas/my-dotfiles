@@ -22,4 +22,4 @@ if __name__ == "__main__":
     subprocess.run(['gsettings', 'set', 'org.gnome.desktop.background', 'picture-uri-dark', 'file://' + fullparh])
     # os.system(f"notify-send -i {fullparh} 'WallPaper' 'WallPaper changed to {wallpaper}'")
     subprocess.run(["echo" , f"WallPaper set to {wallpaper}."])
-    os.system(f"notify-send -i {fullparh} 'WallPaper' 'WallPaper set to {wallpaper}'")
+    # os.system(f"notify-send -i {fullparh} 'WallPaper' 'WallPaper set to {wallpaper}'")
