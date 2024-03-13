@@ -132,8 +132,8 @@ alias nivm="nvim"
 alias sz='source ~/.zshrc;echo "ZSH aliases sourced."'
 alias ez="nvim ~/.zshrc"
 
-alias ls="exa -aF --color=always --group-directories-first"
-alias ll="exa -alF --color=always --group-directories-first"
+alias ls="exa -aF --color=always --group-directories-first --icons"
+alias ll="exa -alF --color=always --group-directories-first --icons"
 alias tree="exa -F --color=always --tree"
 
 alias merge="xrdb -merge ~/.Xresources"
