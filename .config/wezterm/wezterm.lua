@@ -6,7 +6,8 @@ local config = {}
 -- config.font = wezterm.font("ComicShannsMono Nerd Font")
 -- config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font = wezterm.font("Fira Code")
-config.font_size = 13.5
+-- config.font = wezterm.font("Iosevka Fixed")
+config.font_size = 13
 
 config.default_cursor_style = "SteadyBar"
 -- SteadyBlock, BlinkingBlock, SteadyUnderline, BlinkingUnderline, SteadyBar, BlinkingBar
@@ -14,6 +15,7 @@ config.default_cursor_style = "SteadyBar"
 -- color scheme
 -- config.color_scheme = "Ubuntu"
 -- config.color_scheme = "tokyonight_night"
+-- config.color_scheme = "Dracula (Official)"
 config.color_scheme = "GitHub Dark"
 
 -- background
@@ -28,6 +30,8 @@ config.integrated_title_button_style = "Gnome"
 -- config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_decorations = "TITLE | RESIZE"
+
+config.audible_bell = "Disabled"
 
 -- config.window_background_image = "/mnt/media/wallpapers/cat_leaves.png"
 -- config.window_background_image_hsb = {

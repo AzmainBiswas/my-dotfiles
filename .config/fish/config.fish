@@ -6,6 +6,7 @@ set -U fish_greeting ""
 
 starship init fish | source
 # oh-my-posh init fish --config $HOME/.config/oh-my-posh/my-oh-my-posh-gruvboc.omp.json | source
+# set -g pure_enable_single_line_prompt true
 
 # Envioment variables
 set -g fish_prompt_pwd_dir_length 0
@@ -30,15 +31,15 @@ set -Ua fish_user_paths $HOME/bin $HOME/latex-bin $HOME/menu-scripts $HOME/.loca
 
 # alias
 alias cls clear
-alias ll "exa -alF --color=always --group-directories-first"
-alias ls "exa -aF --color=always --group-directories-first"
+alias ll "exa -alF --color=always --group-directories-first --icons"
+alias ls "exa -aF --color=always --group-directories-first --icons"
 alias tree "exa -F --color=always --tree"
 
 # ABBR
 abbr sd "cd (fd . --type directory | fzf )"
 abbr sf "source ~/.config/fish/config.fish && echo 'fish is reloaded'"
 
-abbr py "python"
+abbr py "python3"
 abbr spe "source ~/.python_env/bin/activate.fish"
 abbr spdl "spotdl --bitrate=320k" 
 abbr tn "tmux new -s (pwd | sed 's/.*\///g')"
