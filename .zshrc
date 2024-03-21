@@ -15,7 +15,7 @@ export STARSHIP_CONFIG='/home/azmain/.config/starship/starship.toml'
 export PF_INFO='ascii title os kernel shell uptime palette'
 
 ############### PATH ##########################
-export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Documents/fetch-tools:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/.cargo/bin:$HOME/Documents/fetch-tools:$HOME/.dotnet/tools:$PATH"
 
 
 autoload -U colors; colors

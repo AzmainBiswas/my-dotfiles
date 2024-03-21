@@ -15,7 +15,7 @@ window:
   dimensions:
     columns: 150
     lines: 35
-  opacity: 1.0
+  opacity: 0.95
   decorations: full
 scrolling:
   history: 50000
@@ -26,20 +26,20 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Fira Code
+    family: ComicShannsMono Nerd Font
     style: Regular
   bold:
-    family: Fira Code
+    family: ComicShannsMono Nerd Font
     style: Bold
   italic:
-    family: Fira Code
+    family: ComicShannsMono Nerd Font
     style: Italic
   bold_italic:
-    family: Fira Code 
+    family: ComicShannsMono Nerd Font 
     style: Bold Italic
 
   # Point size
-  size: 13.5
+  size: 14
 draw_bold_text_with_bright_colors: false
 
 # Window title
